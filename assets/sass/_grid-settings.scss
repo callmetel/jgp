@@ -1,0 +1,37 @@
+@import "../../assets/bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// Adding a Visual Grid while you develop. Set to 'true.'
+$visual-grid: false;
+$visual-grid-color: #ccc;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.2;
+
+// Change the grid settings
+$column: 68px;
+$gutter: 35px;
+$grid-columns: 12;
+$max-width: 1206px;
+
+// Breakpoints
+$sm: new-breakpoint(min-width 200px 4);
+$smbg: new-breakpoint(min-width 480px 4);
+$md: new-breakpoint(min-width 768px 6);
+$hg: new-breakpoint(min-width 1140px 12);
+
+$small-mobile: new-breakpoint(max-width 639px 6);
+$mobile: new-breakpoint(max-width 767px 6);
+$regular-screen: new-breakpoint(max-width 1000px 12);
+$large-screen: new-breakpoint(max-width 1200px 12);
+$xl-large-screen: new-breakpoint(min-width 1201px 12);
+
+
+//height breakpoint
+
+$small-height: new-breakpoint(max-height 600px);
+
+// // Neat Breakpoints
+// $medium-screen: em(640);
+// $large-screen: em(1140);
+
+// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+// $large-screen-up: new-breakpoint(min-width $large-screen 12);

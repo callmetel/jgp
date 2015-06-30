@@ -1,0 +1,80 @@
+
+@import "../base/buttons";
+
+#newsletter-lightbox{
+	position: fixed;
+	top: -100%;
+	width: 100%;
+	background: rgba(0,0,0,.7);
+	height: 100%;
+	opacity: 0;
+	z-index: 2;
+	@include transition(opacity .5s ease-in-out);
+	overflow: hidden;
+	text-align: center;
+
+    #newsletter-signup{
+		background: #0a283e;
+		border-radius: 6px;
+		width:24.6875rem;
+		min-height: 584px;
+		position:relative;
+		@include margin(5.25rem auto);
+		
+		div.blog-title{
+			padding-top: 3.75rem;
+			#rect{
+			  margin-top: 1.0625rem;
+			  margin-right: 8px;
+			  width: 8.4375rem;
+			  height: 10px;
+			  background-color: white;
+			  float: left;
+			}
+			ul{
+				margin-bottom: 2px;
+			}
+		}
+		h1{
+			font-family:$font-light;
+			font-size: 2rem;
+			letter-spacing: 2px;
+			clear: none;
+			color: $white;
+			margin-top: 0;
+			line-height: 2rem;
+		}
+		p{
+			  font-family:$font-light;
+			  font-size: .9rem;
+			  color:white;
+			  width: 60%;
+			  margin: 10px auto 1.875rem auto;
+			  line-height: 1.5;
+		}
+		#newsletter-form{
+			background:white;
+			border-radius:0px 0px 6px 6px;
+			min-height: 21.125rem;
+			padding-top: 15px;
+			input{
+				width: 80%;
+				margin: 10px auto;
+			}
+			.button{
+				font-size:1.375rem;
+				padding-top: .7em;
+				padding-bottom: .7em;
+			}
+		}
+	}
+}
+
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the #newsletter-lightbox anchor */
+
+#newsletter-lightbox:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+}

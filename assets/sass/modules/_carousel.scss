@@ -1,0 +1,141 @@
+#work-site .content, #work-app .content, #work-banner .content, #work-print .content, #work-brand .content{
+	margin-top: 30px;
+}
+.carousel{
+  	height: 100vh;
+  	margin-right: auto;
+  	margin-left:auto;
+ //  	@include media($mtablet-max) {
+ //  		@include span-columns(12);
+ //  	}
+ //  	@include media($large-mobile){
+ //  		height: 400px;
+	// 	border:none;
+	// }
+	// @include media($medium-mobile){
+ //  		height: 250px;
+	// 	border:none;
+	// }
+	// @include media($mobile){
+ //  		height: 210px;
+	// 	border:none;
+	// }
+
+}
+#slider{
+	width:100%;
+	height:100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	padding:3px;
+	// @include media($large-mobile){
+	// 	max-height: 480px;
+	// }
+	// @include media($mtablet){
+	// height: 480px;	
+	// }
+a:hover{
+	border:none!important;
+	opacity:.7;
+}
+}
+
+#slider img{
+	width:250px;
+	height:auto;
+	display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+	height:auto;
+	&:hover{
+		opacity:.7;
+	}
+	// @include media($mtablet){
+	// max-height: 480px;	
+	// width:90%;
+	// }
+	
+}
+
+.slide{
+	text-align: center;
+  	position: absolute;
+  	top: 0;
+  	width:100%;
+  	opacity:0;
+}
+
+#prev{
+	background-image: url(../images/keyboard-arrow-left.svg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width:40px;
+	height:40px;
+	float: left;
+	margin-top: 130px;
+	cursor: pointer;
+	position: relative;
+	z-index: 100;
+	margin-right: -50px;
+ 	margin-left: 5px;
+	// @include media($medium-mobile){
+	// 	margin-top: 265px;
+	// 	background-size: 35px;
+	// }
+ // 	@include media($mobile){
+ //  		margin-top: 230px;
+ //  		background-size: 30px;
+	// }
+	&:hover{
+		border: none!important;
+	}
+}
+
+#next{
+	background-image: url(../images/keyboard-arrow-right.svg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width:40px;
+	height:40px;
+	float: left;
+	margin-top: 130px;
+	cursor: pointer;
+	position: relative;
+	z-index: 100;
+	margin-left: -45px;
+	// @include media($medium-mobile){
+	// 	margin-top: 265px;
+	// 	background-size: 35px;
+	// 	margin-left: -40px;
+	// }
+	// @include media($mobile){
+ //  		margin-top: 230px;
+ //  		background-size: 30px;
+ //  		margin-left: -40px;
+	// }
+
+	&:hover{
+		border: none!important;
+	}
+}
+
+#afropunk{
+	max-width: 507px;
+}
+#lookingglass{
+	max-width: 548px;
+}
+
+.site-slides img{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	// @include media($mtablet){
+	// max-width: 637px;
+	// display: inline-block;
+	// margin-left: auto;
+	// margin-right: auto;
+
+	// }
+}

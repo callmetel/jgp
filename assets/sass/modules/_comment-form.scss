@@ -1,0 +1,56 @@
+#comment-form{
+	margin-top: 3.125rem;
+	margin-left: 2.5rem;
+
+	h1{
+		border:none!important;
+		font-size: 1.5625rem!important;
+		margin-bottom:1rem!important;
+	}
+	ul{
+		li{
+			display: inline-block;
+			vertical-align: top;
+			
+		}
+		.comment-textarea{
+			display: inline-block!important;
+			
+			textarea{
+				margin:0;
+				display: inline-block;
+			}
+			.comment-login{
+				width:100%;
+				margin-top: 1.25rem;		
+			}
+			.comment-signup{
+				width:50%;
+				float:left;
+				padding-right: 10px;
+			}
+			.comment-submit{
+				float:right;
+				width:50%;
+				padding-left: 10px;
+				margin-top:3rem;
+				.submit-button, .button{
+				width:90%;
+				font-size: 0.875rem;
+				height: 2.5rem;
+  				line-height: 1.5rem;
+			}
+			ul{
+				margin-left: 2.5rem;
+				margin-top: 5px;
+				li{
+					font-size: 0.875rem!important;
+
+				}
+			}
+			}
+
+		}
+	}
+
+}

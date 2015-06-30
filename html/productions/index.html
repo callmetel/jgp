@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+	<title>John Graves Productions</title>
+	<link type="text/css" rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+	<div id="bg-productions" class="subpage-bg">
+		<div class="wrap-subpg">
+		<nav id="main-nav">
+
+			<!-- DESKTOP NAVIGATION -->
+
+			<div class="standard-nav">
+				<ul class="nav-desktop">
+					<li id="productions-index-link"><a href='#'>HOME</a></li>
+					<li id="about-us-link"><a href='#'>ABOUT US</a></li>
+					<li id="plays-link"><a href='#'>PLAYS</a></li>
+					<li id="auditions-link"><a href='#'>AUDITIONS</a></li>
+					<li id="tickets-link"><a href='#'>TICKETS</a></li>
+					<li id="classes-link"><a href='#'>CLASSES</a></li>
+				</ul>
+			</div>
+		
+			<!-- MOBILE NAVIGATION -->
+
+			<a href="#" class="toggle-menu">
+				<span class="icon-bar"></span>
+				<span class="icon-bar red"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<ul class="nav-mobile is-inactive">	
+				<li><a href='index.html'>HOME</a></li>
+				<li><a href='index.html#about-us'>ABOUT US</a></li>
+				<li><a href='index.html#plays'>PLAYS</a></li>
+				<li><a href='index.html#auditions'>AUDITIONS</a></li>
+				<li><a href='index.html#tickets'>TICKETS</a></li>
+				<li><a href='index.html#classes'>CLASSES</a></li>
+			</ul>
+		</nav>
+
+		<header id="sub-pg-header" class="header fadeIn-scaleUp">
+			<h1 class="productions-h1">JOHN GRAVES PRODUCTIONS</h1>
+			<h2>A sentence about the production company or the slogan could go here.</h2>
+		</header>
+
+		<section id="about-us" class="is-inactive">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, consectetur blanditiis est, recusandae possimus deserunt expedita quas similique saepe ipsam error voluptates culpa alias animi corrupti. Voluptas velit a ut? Ex voluptatum inventore ad quisquam libero ipsa, voluptatibus doloremque minus quo iusto rem assumenda, aliquam laudantium dicta recusandae amet quia sunt atque impedit quidem blanditiis dolorem sapiente! Quos ad unde, natus ipsa nam id pariatur repellat ullam maxime libero tenetur, consequuntur qui dolor. Dolores molestiae accusamus pariatur fugiat. Ad iste excepturi, aliquam tempora repellendus, perspiciatis ipsam dolores, fugiat deserunt, distinctio minus iusto facere. Officiis repellat quam similique repudiandae necessitatibus ad.</p>
+		</section>
+
+		<section id="plays" class="is-inactive">
+				<ul class="plays-grid">
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+					<a href="#" class="play">
+						<li>NAME OF PLAY</li>
+					</a>
+				</ul>
+		</section>
+
+		<section id="auditions" class="is-inactive">
+				<div class="booking-text left">
+					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam maxime, velit soluta atque saepe, libero voluptatem sequi expedita ea tenetur eaque.</p>
+				</div>
+				<div class="divider"></div>
+				<form class="request-booking right">
+					<input type="text" placeholder="NAME" name="name">
+					<input type="email" placeholder="EMAIL" name="email">
+					<input type="submit" value="REQUEST AUDITION FORM" class="button booking-btn">
+				</form>
+				<?php
+
+					if(isset($_POST['button_pressed']))
+					{
+					    $to      = 'nobody@example.com';
+					    $subject = 'the subject';
+					    $message = 'hello';
+					    $headers = 'From: webmaster@example.com' . "\r\n" .
+					        'Reply-To: webmaster@example.com' . "\r\n" .
+					        'X-Mailer: PHP/' . phpversion();
+
+					    mail($to, $subject, $message, $headers);
+
+					    echo 'Email Sent.';
+					}
+
+					?>
+		</section>
+		<section id="tickets" class="is-inactive is-scrollable">
+			<ul id="ticket-list" class="list">
+				<div id="upcoming-events">
+					<h1>UPCOMING EVENTS</h1>
+					<li class="ticket-container">
+						<ul class="ticket">
+							<li class="ticket-info"><span>MOSES</span><br>THE ARTS BANK<br>BROAD &amp; SOUTH ST PHILADELPHIA, PA<br>RUNNING FROM JUNE 27 - 28</li>
+							<li class="ticket-price">$25 REGULAR ADMISSION<br>$40 PREFERRED SEATING</li>
+							<li><a href="http://jgp.ticketleap.com/moses/" target="_blank" class="button">BUY TICKETS</a></li>
+						</ul>
+					</li>
+				</div>
+				<div id="past-events">
+					<h1>PAST EVENTS</h1>
+					<li class="ticket-container is-disabled">
+						<ul class="ticket">
+							<li class="ticket-info"><span>MOSES</span><br>THE ARTS BANK<br>BROAD &amp; SOUTH ST PHILADELPHIA, PA<br>RUNNING FROM JUNE 27 - 28</li>
+							<li class="ticket-price">$25 REGULAR ADMISSION<br>$40 PREFERRED SEATING</li>
+							<li><a href="#" class="button">BUY TICKETS</a></li>
+						</ul>
+					</li>
+					<li class="ticket-container is-disabled">
+						<ul class="ticket">
+							<li class="ticket-info"><span>MOSES</span><br>THE ARTS BANK<br>BROAD &amp; SOUTH ST PHILADELPHIA, PA<br>RUNNING FROM JUNE 27 - 28</li>
+							<li class="ticket-price">$25 REGULAR ADMISSION<br>$40 PREFERRED SEATING</li>
+							<li><a href="#" class="button">BUY TICKETS</a></li>
+						</ul>
+					</li>
+				</div>
+			</ul>
+		</section>
+		<section id="classes" class="is-inactive is-scrollable">
+			<ul id="class-list" class="list">
+				<h1>2015 CLASSES</h1>
+				<li class="class-container">
+					<ul class="class">
+						<li class="class-info"><span>6 WEEK PERFORMING ARTS SERIES</span><br>JULY 12 - AUGUST 16<br>AGES 18+<br>SUN 5-7PM AND TUES &amp; THURS 7-9PM</li>
+						<li class="class-price">$165 TOTAL<br>$30 WEEKLY</li>
+						<li><a href="#" class="button class-btn" id="adult-series">MORE INFO</a></li>
+					</ul>
+				</li>
+				<li class="class-container">
+					<ul class="class">
+						<li class="class-info"><span>6 WEEK PERFORMING ARTS SERIES FOR KIDS</span><br>JULY 12 - AUGUST 16<br>AGES 6-12<br>FRI 6-8PM AND SAT 11-12PM</li>
+						<li class="class-price">$135 TOTAL<br>$25 WEEKLY</li>
+						<li><a href="#" class="button class-btn" id="kid-series">MORE INFO</a></li>
+					</ul>
+				</li>
+				<li class="class-container">
+					<ul class="class">
+						<li class="class-info"><span>6 WEEK PERFORMING ARTS SERIES FOR TEENS</span><br>JULY 12 - AUGUST 16<br>AGES 13-16<br>THURS 5-7PM AND SAT 12-1PM</li>
+						<li class="class-price">$135 TOTAL<br>$25 WEEKLY</li>
+						<li><a href="#" class="button class-btn" id="teen-series">MORE INFO</a></li>
+					</ul>
+				</li>
+				<li class="class-container">
+					<ul class="class">
+						<li class="class-info"><span>6 WEEK DANCE SERIES</span><br>JULY 12 - AUGUST 16<br>TEENS &amp; ADULTS<br>SUN 5-6.30PM</li>
+						<li class="class-price">$65 TOTAL<br>$12 WEEKLY</li>
+						<li><a href="#" class="button class-btn" id="dance-series">MORE INFO</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		</div>
+		<footer class="social-media">
+			<div id="icons-wrap" class="fixed-to-bottom">
+			<a href="http://instagram.com" target="_blank"><img src="../../assets/images/instagram.svg" alt="Instagram" class="icon"></a>
+			<a href="http://twitter.com" target="_blank"><img src="../../assets/images/twitter.svg" alt="Twitter" class="icon"></a>
+			<a href="http://facebook.com/Heres2coolstuff" target="_blank"><img src="../../assets/images/facebook.svg" alt="Facebook" class="icon"></a>
+			</div>
+		</footer>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>		
+<script src="../../assets/js/_productions-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+.btn-default,input[type="submit"] {
+	border-radius: 0px;
+	height: 60px;
+	display: inline-block;
+	font-size:1rem;
+	letter-spacing: 0.1em;
+	font-family: $font-bold;
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 395px;
+	text-align: center;
+
+	&:hover{
+		text-decoration: none;
+	}
+	&:focus{
+		outline: none;
+	}
+
+	@include media($mobile){
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+	}
+}
+
+.btn-small{
+	border-radius: 36px;
+	font-size: 0.875rem;
+	letter-spacing: 0.1em;
+	font-family: $font-black;
+	height: 55px;
+	color: $white;
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 285px;
+
+}
+
+.btn-secondary{
+	border: 3px solid $blue;
+	line-height: 57px;
+
+	color: $blue;
+
+	&:hover{
+		color: $blue;
+	}
+
+	&.white{
+		border-color: $white;
+		color: $grey;
+
+		&:hover{
+			color: $grey;
+		}
+	}
+	&.small{
+		line-height: 50px;
+	}
+}
+
+.btn-primary{
+	line-height: 60px;
+	color: $white;
+	border: 0;
+
+	&:hover, &:active, &:focus, &:visited{
+		color: $white;
+	}
+
+
+	&.pink{
+		background-color: $pink1;
+		&:hover{
+			background-color: $pink4;
+		}
+	}
+
+	&.blue{
+		background-color: $blue1;
+		&:hover{
+			background-color: $blue4;
+		}
+	}
+}
+
+.big-button{
+	width:350px!important;
+	font-size: 45px!important;
+	line-height: 40px!important;
+}
+
+.booking-btn{
+	width:290px!important;
+	font-size:2rem!important;
+	border: 1px solid white !important;
+	font-family: $font-bold;
+	letter-spacing: 0!important;
+	margin-top: 50px;
+	
+}
+
+/* Common button styles */
+.button {
+	color:white;
+	background-color: black;
+	font-family: $font-bold;
+	font-size: 2.02813rem;
+	line-height: 3.2675rem;
+	padding:5px 20px;
+	text-align: center;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.newsletter-close {
+display: block;
+width:50px;
+height:50px;
+border-radius: 25px;
+border: 4px solid #6c7e8c;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+@include transition(all .5s ease-in-out);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.newsletter-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 21px;
+top: 6px;
+@include transform(rotate(45deg));
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.newsletter-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 21px;
+top: 6px;
+@include transform(rotate(-45deg));
+}
+
+#newsletter-lightbox:target a.newsletter-close {
+  top: -20px;
+  right: -20px;
+}
+
+#signup-button{
+	width:80%;
+	margin-top: 30px;
+	line-height:40px;
+}

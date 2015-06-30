@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+	<title>JGP Studio</title>
+	<link type="text/css" rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+	<div id="bg-studio" class="subpage-bg">
+		<div class="wrap-subpg">
+			<nav id="main-nav">
+
+				<!-- DESKTOP NAVIGATION -->
+
+				<div class="standard-nav">
+					<ul class="nav-desktop">
+						<li id="studio-index-link"><a href='#'>HOME</a></li>
+						<li id="events-link"><a href='#'>EVENTS</a></li>
+						<li id="booking-link"><a href='#'>BOOKING</a></li>
+						<li id="contact-link"><a href='#'>CONTACT</a></li>
+						<li id="calendar-link"><a href='#'>CALENDAR</a></li>
+					</ul>
+				</div>
+
+				<!-- MOBILE NAVIGATION -->
+
+				<a href="#" class="toggle-menu">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<ul class="nav-mobile is-inactive">	
+					<li><a href='index.html'>HOME</a></li>
+					<li><a href='index.html#events'>EVENTS</a></li>
+					<li><a href='index.html#booking'>BOOKING</a></li>
+					<li><a href='index.html#contact'>CONTACT</a></li>
+					<li><a href='index.html#calendar'>CALENDAR</a></li>
+				</ul>
+			</nav>
+
+			<header id="sub-pg-header" class="header fadeInScaleUp">
+				<h1>JGP STUDIO</h1>
+				<h2>A sentence about the studio or the slogan could go here.</h2>
+			</header>
+
+			<section id="events" class="is-inactive">
+				<section id="event-carousel" class="carousel">
+					<a id="prev" href="#"></a>
+					<div id="slider">
+						<div class="slide">
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 1"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 1"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 1"></a>
+						</div>
+						<div class="slide">
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 2"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 2"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 2"></a>
+						</div>
+
+						<div class="slide">
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 3"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 3"></a>
+							<a href="#"><img src="../../assets/images/event.jpg" alt="slide 3"></a>
+						</div>
+					</div>
+					<a id="next" href="#"></a>
+				</section>
+			</section>
+
+			<section id="booking" class="is-inactive 2-col-grid">
+				<div class="booking-text left">
+					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam maxime, velit soluta atque saepe, libero voluptatem sequi expedita ea tenetur eaque.</p>
+				</div>
+				<div class="divider"></div>
+				<form class="request-booking right">
+					<input type="text" placeholder="NAME" name="name">
+					<input type="email" placeholder="EMAIL" name="email">
+					<input type="submit" value="REQUEST BOOKING FORM" class="button booking-btn">
+				</form>
+				<?php
+
+					if(isset($_POST['button_pressed']))
+					{
+					    $to      = 'nobody@example.com';
+					    $subject = 'the subject';
+					    $message = 'hello';
+					    $headers = 'From: webmaster@example.com' . "\r\n" .
+					        'Reply-To: webmaster@example.com' . "\r\n" .
+					        'X-Mailer: PHP/' . phpversion();
+
+					    mail($to, $subject, $message, $headers);
+
+					    echo 'Email Sent.';
+					}
+
+					?>
+			</section>
+
+			<section id="contact" class="is-inactive">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nobis repudiandae error distinctio dolorum nisi magni voluptas, voluptate quidem eos quasi, corporis vitae deleniti architecto sed nesciunt consectetur.</h2>
+				<a href="mailto:example@example.com" class="underline big-link">info@johngravesproductions.org</a>
+			</section>
+
+			<section id="calendar" class="is-inactive">
+				<div class="google-calendar">
+					<iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=531&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nthornton.jgp%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="652" height="531" frameborder="0" scrolling="no"></iframe>
+				</div>
+			</section>
+		</div>
+			<footer class="social-media">
+				<div id="icons-wrap" class="fixed-to-bottom">
+					<a href="http://instagram.com" target="_blank"><img src="../../assets/images/instagram.svg" alt="Instagram" class="icon"></a>
+					<a href="http://twitter.com" target="_blank"><img src="../../assets/images/twitter.svg" alt="Twitter" class="icon"></a>
+					<a href="http://facebook.com/Heres2coolstuff" target="_blank"><img src="../../assets/images/facebook.svg" alt="Facebook" class="icon"></a>
+				</div>
+			</footer>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>		
+<script src="../../assets/js/_studio-nav.js"></script>	
+<script src="../../assets/js/_carousel.js"></script>	
+	</body>
+	</html>
