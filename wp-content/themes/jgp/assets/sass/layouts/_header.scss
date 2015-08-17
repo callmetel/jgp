@@ -1,0 +1,71 @@
+.header{
+  padding-top: 20px;
+  margin-bottom: 87px;
+
+  @include media($mobile){
+    padding-top: 20px;
+    margin-bottom: 64px;
+  }
+
+  .link-logo{
+    margin-left: 5px;
+  }
+}
+
+.header-logo{
+	display: inline-block;
+	@include hide-text();
+	background-size: cover;
+	height: 23px;
+	width: 96px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+  @include media($mobile){
+    height: 18px;
+  }
+}
+
+
+// .site-branding {
+// 	text-align: center;
+
+// 	.site-title {
+// 		font-family: $title;
+// 		padding: 40px;
+
+// 		@include media($sm) {
+// 			font-size:35px);
+// 		}
+// 		@include media($smbg) {
+// 			font-size:55px);
+// 		}
+// 		@include media($md) {
+// 			font-size:75px);
+// 		}
+
+// 		a,a:visited {
+// 			line-height: 1;
+// 		}
+
+// 	}
+
+// 	.site-description {
+// 		padding: 25px 0;
+// 		font-size:20px);
+
+// 		@include media($sm) {
+// 			font-size:15px);
+// 		}
+// 		@include media($smbg) {
+// 			font-size:18px);
+// 		}
+// 		@include media($md) {
+// 			font-size:25px);
+// 		}
+// 		font-family: $content;
+// 		font-style: italic;
+// 	}
+// }

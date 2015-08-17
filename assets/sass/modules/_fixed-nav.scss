@@ -1,0 +1,59 @@
+footer.fixed-nav{
+	height: 15vh;
+    color: #fff;
+    background-color: black;
+    width: 100%;
+    padding: 15px;
+    .logo-container{
+    	display: inline-block;
+    	img{
+        	padding-left: 10px;	
+    		width: 110px;
+	    }
+        @include media($lg-min){
+            width:10%;
+        }
+        @include media($xl-min){
+            width:20%;
+        }
+    }
+    .nav-desktop{
+    	display: inline-block;
+    	vertical-align: middle;
+    	margin-top: -4.5vh;
+    	width: 79%;
+        @include media($rg-min){
+            margin-left:30px;    
+        }
+        @include media($lg-min){
+            margin-left:50px; 
+        }
+        @include media($xl-min){
+            margin-left:0px;
+        }
+    	li{
+			color:white;
+	    	display:inline-block;
+            a{
+                @include media($rg-max){
+                    font-size: 1.3rem!important;
+                }
+            }
+            @include media($rg-min){
+                padding-left: 10px;
+                padding-right: 10px
+            }
+            @include media($lg-min){
+                padding-right: 40px
+            }
+            @include media($xl-min){
+                padding-left:40px;
+                padding-right: 40px;
+            }
+    	}
+    }
+}
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+}

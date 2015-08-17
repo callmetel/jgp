@@ -1,0 +1,52 @@
+@import "keyframes";
+.pulse{
+
+	@include animation(pulse-animation 5s linear infinite);
+	@include transform-origin(70% 70%);
+
+}
+
+.spin{
+	@include animation(spin 7s linear);
+}
+
+.fade-out{
+	@include animation(fadeOut 2s linear);
+	@include animation-timing-function(ease);
+	@include animation-delay(.5s);
+
+}
+
+.fade-in{
+	@include animation(fadeIn 2s linear);
+	@include animation-timing-function(ease);
+
+}
+
+.fadeIn-scaleUp{
+	@include animation(fadeInScale 1s linear);
+	@include animation-fill-mode(forwards);
+}
+
+.blur{
+	@include animation(blur 1s linear);
+	@include animation-fill-mode(forwards);
+	z-index: 1;
+}
+
+.slide-in{
+	@include animation(slidein 1s linear);
+	@include animation-fill-mode(forwards);
+}
+ .slide-in-reverse{
+	@include animation(slideinreverse 1s linear);
+	@include animation-fill-mode(backwards);
+}
+
+textarea::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder  {
+	-webkit-transition: opacity 0.2s linear; 
+}
+
+textarea:focus::-webkit-input-placeholder, input[type="email"]:focus::-webkit-input-placeholder, input[type="search"]:focus::-webkit-input-placeholder, input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder  {
+  opacity: 0;
+}

@@ -1,0 +1,64 @@
+.bg-index{
+	#contact{
+		margin-top: 0px;
+		padding-top: 4.375rem;
+		padding-bottom: 12.5rem;
+		h1{
+			font-size: 5.075rem;
+			font-family: $font-bold;
+			margin-top: -15px;
+		}
+		h2{
+			margin: 5px auto;
+			font-size: 1.5rem;
+			color:rgba(255,255,255,0.65);
+			font-family: $font-light;
+			font-weight: bold;
+			@include media($rg-min){
+	            width:60%;
+	        }
+	        @include media($xl-min){
+	            width:40%;
+	        }
+		}
+		form{
+			margin: 5px auto;
+			margin-top: 30px;
+			@include media($rg-min){
+	            width:70%;
+	        }
+	        @include media($xl-min){
+	            width:50%;
+	        }
+			.contact-submit{
+				margin-left:auto;
+				margin-right:auto;
+				@include media($rg-min){
+		            width:93%;
+		        }
+		        @include media($lg-min){
+		            width:70%;
+		        }
+				.user-input{
+					width:100%;
+					input{
+						display: inline-block;
+						width:47%;
+						margin:0 6px;
+					}
+				}
+				.submit-button{
+					color:white;
+					font-size: 1.755rem;
+					margin-left: auto;
+				    margin-right: auto;
+				    margin-top: 15px;
+				    padding-left: 50px;
+				    padding-right: 50px;
+				    width:40%;
+
+				}
+			}
+		}
+	}
+}
