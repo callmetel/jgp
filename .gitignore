@@ -1,3 +1,54 @@
+/*
+*~
+.DS_Store
+!*.md
+
+!/.gitignore
+
+# wp-content
+!/wp-content/
+wp-content/*
+
+# wp-content/themes
+!/wp-content/themes/
+/wp-content/themes/*
+
+# wp-content/themes-getmoxied
+!/wp-content/themes/getmoxied
+
+# Deploy Script Submodule
+!.gitmodules
+!wp-gulp-deploy
+!deploy.json
+
+# Ignore CI tool file
+!ci.sh
+!.travis.yml
+
+/.buildpath
+/build/
+*/archive/
+
+__MACOSX
+.DS_Store
+
+.project
+.settings
+.classpath
+.sass-cache/
+
+# OS generated files #
+######################
+*/.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
 # Build and Release Folders
 bin/
 bin-debug/
