@@ -89,3 +89,5 @@ node_modules/
 
 # ignore wp-config file as it stores password
 wp-config.php
+
+assets/
