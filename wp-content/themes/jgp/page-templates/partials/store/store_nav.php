@@ -1,9 +1,8 @@
 <div id="bg-h2c" class="subpage-bg">
 	<div class="wrap-subpg">
 		<nav id="main-nav">
-
+			
 			<!-- DESKTOP NAVIGATION -->
-
 			<div class="standard-nav">
 				<ul class="nav-desktop">
 					<li id="store-index-link"><a href='#'>HOME</a></li>
