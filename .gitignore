@@ -1,62 +1,91 @@
-/*
-*~
-.DS_Store
-!*.md
+# -----------------------------------------------------------------
+# Minimalistic .gitignore for WordPress
+#
+# To get this file rub bellow wget command from project root directory
+# wget -O .gitignore https://gist.github.com/indieforger/d915d8b430fef748f966/raw
+#
+# To ignore uncommitted changes in a file that is already tracked,
+# use `git update-index --assume-unchanged`.
+#
+# To stop tracking a file that is currently tracked,
+# use `git rm --cached`
+#
+# -----------------------------------------------------------------
 
-!/.gitignore
+# ignore all files starting with .
+.*
 
-# wp-content
-!/wp-content/
-wp-content/*
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
 
-# wp-content/themes
-!/wp-content/themes/
-/wp-content/themes/*
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
 
-# wp-content/themes-getmoxied
-!/wp-content/themes/getmoxied
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
 
-# Deploy Script Submodule
-!.gitmodules
-!wp-gulp-deploy
-!deploy.json
+# ignore all files that start with ~
+~*
 
-# Ignore CI tool file
-!ci.sh
-!.travis.yml
-
-/.buildpath
-/build/
-*/archive/
-
-__MACOSX
-.DS_Store
-
-.project
-.settings
-.classpath
-.sass-cache/
-
-# OS generated files #
-######################
-*/.DS_Store
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
+# ignore OS generated files
 ehthumbs.db
 Thumbs.db
 
-# Build and Release Folders
-bin/
-bin-debug/
-bin-release/
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
 
-# Other files and folders
-.settings/
+# IntelliJ IDEA files
+.idea/
+*.iml
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# osx specific files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+._*
+*.swp
+*.swo
+*.swn
+
+# ignore log files
+*.log
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins" directory
+# "plugins" directory
+# "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+
+# ignore node/grunt dependency directories
+node_modules/
+
+# ignore wp-config file as it stores password
+wp-config.php
