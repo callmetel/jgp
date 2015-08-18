@@ -86,5 +86,12 @@ node_modules/
 # ignore wp-config file as it stores password
 wp-config.php
 
+# ignore wp-admin & wp-includes folders
+
+wp-admin/
+wp-includes/
+
+
+# ignore static html and css folders
 assets/
 html/
