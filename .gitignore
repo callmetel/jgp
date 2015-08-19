@@ -92,6 +92,7 @@ wp-config.php
 wp-admin/
 wp-includes/
 
+!wp-content/jgp/themes/html
 
 # ignore static html and css folders
 assets/
