@@ -2522,11 +2522,11 @@ footer.fixed-nav {
   position: fixed;
   bottom: 0; }
 
-#contact #icons-container {
+#contact-home #icons-container {
   width: 11.25rem;
   height: 11.25rem;
   margin: 10px auto; }
-  #contact #icons-container #icons {
+  #contact-home #icons-container #icons {
     width: 7.89rem;
     height: 5.65rem;
     margin-left: 2.0625rem;
@@ -2536,18 +2536,18 @@ footer.fixed-nav {
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg); }
-    #contact #icons-container #icons a, #contact #icons-container #icons a:hover {
+    #contact-home #icons-container #icons a, #contact-home #icons-container #icons a:hover {
       border: none !important;
       -webkit-transition: all 0.45s ease-in-out;
       -moz-transition: all 0.45s ease-in-out;
       transition: all 0.45s ease-in-out; }
-    #contact #icons-container #icons a:hover, #contact #icons-container #icons img:hover {
+    #contact-home #icons-container #icons a:hover, #contact-home #icons-container #icons img:hover {
       -webkit-filter: brightness(110%);
       filter: brightness(110%);
       -webkit-transition: all 0.45s ease-in-out;
       -moz-transition: all 0.45s ease-in-out;
       transition: all 0.45s ease-in-out; }
-    #contact #icons-container #icons .icon {
+    #contact-home #icons-container #icons .icon {
       width: 5rem;
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
