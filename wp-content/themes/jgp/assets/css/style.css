@@ -1147,51 +1147,51 @@ footer.social-media #icons-wrap a {
   footer.social-media #icons-wrap a img {
     width: 30px; }
 
-#bg-index #contact {
+#contact-home {
   margin-top: 0px;
   padding-top: 4.375rem;
   padding-bottom: 12.5rem; }
-  #bg-index #contact h1 {
+  #contact-home h1 {
     font-size: 5.075rem;
     font-family: "bebas_neuebold";
     margin-top: -15px; }
-  #bg-index #contact h2 {
+  #contact-home h2 {
     margin: 5px auto;
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.65);
     font-family: "bebas_neuelight";
     font-weight: bold; }
     @media screen and (min-width: 769px) {
-      #bg-index #contact h2 {
+      #contact-home h2 {
         width: 60%; } }
     @media screen and (min-width: 1201px) {
-      #bg-index #contact h2 {
+      #contact-home h2 {
         width: 40%; } }
-  #bg-index #contact form {
+  #contact-home form {
     margin: 5px auto;
     margin-top: 30px; }
     @media screen and (min-width: 769px) {
-      #bg-index #contact form {
+      #contact-home form {
         width: 70%; } }
     @media screen and (min-width: 1201px) {
-      #bg-index #contact form {
+      #contact-home form {
         width: 50%; } }
-    #bg-index #contact form .contact-submit {
+    #contact-home form .contact-submit {
       margin-left: auto;
       margin-right: auto; }
       @media screen and (min-width: 769px) {
-        #bg-index #contact form .contact-submit {
+        #contact-home form .contact-submit {
           width: 93%; } }
       @media screen and (min-width: 993px) {
-        #bg-index #contact form .contact-submit {
+        #contact-home form .contact-submit {
           width: 70%; } }
-      #bg-index #contact form .contact-submit .user-input {
+      #contact-home form .contact-submit .user-input {
         width: 100%; }
-        #bg-index #contact form .contact-submit .user-input input {
+        #contact-home form .contact-submit .user-input input {
           display: inline-block;
           width: 47%;
           margin: 0 6px; }
-      #bg-index #contact form .contact-submit .submit-button {
+      #contact-home form .contact-submit .submit-button {
         color: white;
         font-size: 1.755rem;
         margin-left: auto;

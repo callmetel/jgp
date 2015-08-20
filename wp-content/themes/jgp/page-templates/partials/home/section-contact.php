@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="contact-home">
 	<div class="wrap">
 		<div id="icons-container">
 			<div id="icons">
