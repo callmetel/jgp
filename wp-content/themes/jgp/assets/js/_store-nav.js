@@ -5,10 +5,10 @@ $(document).ready(function() {
 		$donate = $('#donate'),
 		$subpageBg = $('.subpage-bg'),
 		$toggleMenu = $('.toggle-menu'),
-		$storeIndexLink = $('#store-index-link'),
-		$ourStoryLink = $('#our-story-link'),
-		$locationLink = $('#location-link'),
-		$donateLink = $('#donate-link'),
+		$storeIndexLink = $('#menu-item-111'),
+		$ourStoryLink = $('#menu-item-110'),
+		$locationLink = $('#menu-item-112'),
+		$donateLink = $('#menu-item-114'),
 
 		//State Variables
 		$active = $('.is-active'),

@@ -24,8 +24,6 @@
 			<?php include 'partials/contact-form'; ?>
 		</div>
 	</section>
-
-
-
+	<?php include 'partials/fixed-nav.php'; ?>
 </body>
 </html>
