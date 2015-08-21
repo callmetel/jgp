@@ -13,8 +13,4 @@ $(document).ready(function() {
 			$menu_ul.addClass('nav-desktop');
 		} 
 
-		if( $('li').attr('#menu-item-110') ){
-			$menu_li.attr('id', 'menu-item-111');
-		} 
-
 });

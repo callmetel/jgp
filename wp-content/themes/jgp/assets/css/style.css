@@ -2475,21 +2475,20 @@ footer.fixed-nav {
   background-color: black;
   width: 100%;
   padding: 15px; }
-  footer.fixed-nav .logo-container {
-    display: inline-block; }
-    footer.fixed-nav .logo-container img {
+  footer.fixed-nav #menu-item-140 {
+    padding: 0; }
+    footer.fixed-nav #menu-item-140 img {
       padding-left: 10px;
       width: 110px; }
     @media screen and (min-width: 993px) {
-      footer.fixed-nav .logo-container {
+      footer.fixed-nav #menu-item-140 {
         width: 10%; } }
     @media screen and (min-width: 1201px) {
-      footer.fixed-nav .logo-container {
+      footer.fixed-nav #menu-item-140 {
         width: 20%; } }
   footer.fixed-nav .nav-desktop {
     display: inline-block;
     vertical-align: middle;
-    margin-top: -4.5vh;
     width: 79%; }
     @media screen and (min-width: 769px) {
       footer.fixed-nav .nav-desktop {

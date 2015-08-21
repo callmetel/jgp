@@ -4,12 +4,12 @@ footer.fixed-nav{
     background-color: black;
     width: 100%;
     padding: 15px;
-    .logo-container{
-    	display: inline-block;
-    	img{
+    #menu-item-140{
+    	padding:0;
+        img{
         	padding-left: 10px;	
     		width: 110px;
-	    }
+	       }
         @include media($lg-min){
             width:10%;
         }
@@ -20,7 +20,6 @@ footer.fixed-nav{
     .nav-desktop{
     	display: inline-block;
     	vertical-align: middle;
-    	margin-top: -4.5vh;
     	width: 79%;
         @include media($rg-min){
             margin-left:30px;    
