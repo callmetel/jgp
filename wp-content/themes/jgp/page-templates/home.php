@@ -17,10 +17,10 @@ get_header(); ?>
 			<?php include 'partials/home/main-header.php'; ?>
 			<?php include 'partials/home/section-about.php'; ?>
 			<?php include 'partials/home/section-contact.php'; ?>
-
+			<?php include 'partials/fixed_nav.php'; ?>
 		<?php endwhile;
 	endif;
 	?>
 
-<?php include 'partials/primary_nav.php';?>
+
 <?php get_footer(); ?>

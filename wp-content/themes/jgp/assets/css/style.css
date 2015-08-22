@@ -2479,7 +2479,8 @@ footer.fixed-nav {
     padding: 0; }
     footer.fixed-nav #menu-item-140 img {
       padding-left: 10px;
-      width: 110px; }
+      width: 110px;
+      margin-top: 20px; }
     @media screen and (min-width: 993px) {
       footer.fixed-nav #menu-item-140 {
         width: 10%; } }
@@ -2489,7 +2490,7 @@ footer.fixed-nav {
   footer.fixed-nav .nav-desktop {
     display: inline-block;
     vertical-align: middle;
-    width: 79%; }
+    width: 100%; }
     @media screen and (min-width: 769px) {
       footer.fixed-nav .nav-desktop {
         margin-left: 30px; } }
@@ -2501,7 +2502,9 @@ footer.fixed-nav {
         margin-left: 0px; } }
     footer.fixed-nav .nav-desktop li {
       color: white;
-      display: inline-block; }
+      display: inline-block;
+      margin-top: -1.5vh;
+      vertical-align: middle; }
       @media screen and (max-width: 992px) {
         footer.fixed-nav .nav-desktop li a {
           font-size: 1.3rem !important; } }

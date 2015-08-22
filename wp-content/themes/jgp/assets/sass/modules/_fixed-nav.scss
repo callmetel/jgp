@@ -9,6 +9,7 @@ footer.fixed-nav{
         img{
         	padding-left: 10px;	
     		width: 110px;
+            margin-top: 20px;
 	       }
         @include media($lg-min){
             width:10%;
@@ -20,7 +21,7 @@ footer.fixed-nav{
     .nav-desktop{
     	display: inline-block;
     	vertical-align: middle;
-    	width: 79%;
+    	width: 100%;
         @include media($rg-min){
             margin-left:30px;    
         }
@@ -33,6 +34,8 @@ footer.fixed-nav{
     	li{
 			color:white;
 	    	display:inline-block;
+            margin-top:-1.5vh;
+            vertical-align: middle;
             a{
                 @include media($rg-max){
                     font-size: 1.3rem!important;

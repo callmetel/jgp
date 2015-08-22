@@ -26,6 +26,10 @@ function jgp_load_javascript_files() {
   wp_register_script( 'sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
 
 
+  if ( is_page( 'JGP Home' ) ) {
+    wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
+  }
+
   if ( is_page( 2 ) ) {
     wp_enqueue_script('store_nav', get_template_directory_uri() . '/assets/js/_store-nav.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
@@ -60,19 +64,121 @@ function jgp_theme_setup(){
 add_action( 'init', 'jgp_theme_setup' );
 
 
+add_action('init', 'my_remove_editor_from_post_type');
+function my_remove_editor_from_post_type() {
+    remove_post_type_support( 'page', 'editor' );
+}
+
 /**
  * Advanced Custom Fields
  * [add field groups to the site]
  */
 
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
-  'key' => 'group_55d36a3b5be6e',
-  'title' => 'Subpage Layout',
+  'key' => 'group_55d7496e65d43',
+  'title' => 'About Descriptions',
   'fields' => array (
     array (
-      'key' => 'field_55d361fa7d981',
+      'key' => 'field_55d749990e65b',
+      'label' => 'Description',
+      'name' => 'description',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'tabs' => 'visual',
+      'toolbar' => 'basic',
+      'media_upload' => 1,
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '2',
+      ),
+    ),
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => array (
+    0 => 'comments',
+    1 => 'author',
+  ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d61de38ec62',
+  'title' => 'Home Layout',
+  'fields' => array (
+    array (
+      'key' => 'field_55d61dfdcd924',
+      'label' => 'Fixed Navigation',
+      'name' => 'fixed_nav',
+      'type' => 'nav_menu',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'save_format' => 'menu',
+      'container' => 'nav',
+      'allow_null' => 0,
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '58',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'field',
+  'hide_on_screen' => array (
+    0 => 'comments',
+    1 => 'author',
+  ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d753d798e4c',
+  'title' => 'Subpage Global Nav',
+  'fields' => array (
+    array (
+      'key' => 'field_55d753d79d6df',
       'label' => 'Subpage Navigation',
       'name' => 'subpage-nav',
       'type' => 'nav_menu',
@@ -87,31 +193,6 @@ acf_add_local_field_group(array (
       'save_format' => 'menu',
       'container' => 0,
       'allow_null' => 0,
-    ),
-    array (
-      'key' => 'field_55d5dc921c370',
-      'label' => 'Social Media Footer',
-      'name' => 'social_media_footer',
-      'type' => 'gallery',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => 'icons-wrap',
-      ),
-      'min' => 3,
-      'max' => 3,
-      'preview_size' => 'thumbnail',
-      'library' => 'all',
-      'min_width' => '',
-      'min_height' => '',
-      'min_size' => '',
-      'max_width' => '',
-      'max_height' => '',
-      'max_size' => '',
-      'mime_types' => '',
     ),
   ),
   'location' => array (
@@ -145,6 +226,187 @@ acf_add_local_field_group(array (
   'hide_on_screen' => array (
     0 => 'discussion',
     1 => 'comments',
+  ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d75ad3c1539',
+  'title' => 'Store Location Info',
+  'fields' => array (
+    array (
+      'key' => 'field_55d75b374b7cf',
+      'label' => 'Map',
+      'name' => 'map',
+      'type' => 'google_map',
+      'instructions' => '',
+      'required' => 1,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'center_lat' => '39.943302',
+      'center_lng' => '-75.162258',
+      'zoom' => 14,
+      'height' => '',
+    ),
+    array (
+      'key' => 'field_55d774674cfeb',
+      'label' => 'Street Address',
+      'name' => 'street_address',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '1214 South St',
+      'placeholder' => '',
+    ),
+    array (
+      'key' => 'field_55d774924cfec',
+      'label' => 'City State Zip',
+      'name' => 'city_state_zip',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'Philadelphia, Pa 19147',
+      'placeholder' => '',
+    ),
+    array (
+      'key' => 'field_55d777157674a',
+      'label' => 'Weekday Hours',
+      'name' => 'weekday_hours',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'TUES-FRI 2PM-7PM',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'readonly' => 0,
+      'disabled' => 0,
+    ),
+    array (
+      'key' => 'field_55d777c27674b',
+      'label' => 'Weekend Hours',
+      'name' => 'weekend_hours',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'SAT&SUN 12PM-7PM',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'readonly' => 0,
+      'disabled' => 0,
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '2',
+      ),
+    ),
+  ),
+  'menu_order' => 1,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => array (
+    0 => 'comments',
+    1 => 'author',
+    2 => 'featured_image',
+  ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d88e40194f0',
+  'title' => 'Donate Section',
+  'fields' => array (
+    array (
+      'key' => 'field_55d88e6204727',
+      'label' => 'Description',
+      'name' => 'donate_description',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'tabs' => 'visual',
+      'toolbar' => 'basic',
+      'media_upload' => 1,
+    ),
+    array (
+      'key' => 'field_55d8906b04728',
+      'label' => 'Donate Button',
+      'name' => 'donate_button',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'DONATE NOW',
+      'placeholder' => '',
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '2',
+      ),
+    ),
+  ),
+  'menu_order' => 2,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => array (
+    0 => 'comments',
+    1 => 'author',
   ),
   'active' => 1,
   'description' => '',

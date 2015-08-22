@@ -4,11 +4,11 @@
 
 	<div class="standard-nav">
 		<ul class="nav-desktop">
-			<li id="store-index-link"><a href='#'>HOME</a></li>
-			<li id="our-story-link"><a href='#'>OUR STORY</a></li>
-			<li id="location-link"><a href='#'>LOCATION</a></li>
+			<li id="menu-item-111"><a href='#'>HOME</a></li>
+			<li id="menu-item-110"><a href='#'>OUR STORY</a></li>
+			<li id="menu-item-112"><a href='#'>LOCATION</a></li>
 			<li><a href='lookbook.html'>LOOKBOOK</a></li>
-			<li id="donate-link"><a href='#'>DONATE</a></li>
+			<li id="menu-item-114"><a href='#'>DONATE</a></li>
 		</ul>
 	</div>
 	
