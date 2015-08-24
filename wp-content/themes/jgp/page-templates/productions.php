@@ -14,9 +14,14 @@ get_header(); ?>
 		/* Start the Loop */
 		while ( have_posts() ) : the_post(); ?>
 			
-			<?php include 'partials/home/main-header.php'; ?>
-			<?php include 'partials/home/section-about.php'; ?>
-			<?php include 'partials/home/section-contact.php'; ?>
+			<?php include 'partials/productions/productions-nav.php'; ?>
+			<?php include 'partials/subpg_header.php'; ?>
+			<?php include 'partials/productions/header.php'; ?>
+			<?php include 'partials/productions/about-us.php'; ?>
+			<?php include 'partials/productions/plays-grid.php'; ?>
+			
+			<?php include 'partials/subpg_footer.php'; ?>
+			
 
 		<?php endwhile;
 	endif;

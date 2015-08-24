@@ -38,6 +38,7 @@ function jgp_load_javascript_files() {
   if ( is_page( 'Productions' ) ) {
     wp_enqueue_script('productions_nav');
     wp_enqueue_script('lightbox');
+    wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
   }
 
   if ( is_page( 'JGPStudio' ) ) {
@@ -63,10 +64,31 @@ function jgp_theme_setup(){
 
 add_action( 'init', 'jgp_theme_setup' );
 
+/**
+ * Remove Original Wysmig Editor from Backend pages
+ */
 
 add_action('init', 'my_remove_editor_from_post_type');
 function my_remove_editor_from_post_type() {
     remove_post_type_support( 'page', 'editor' );
+}
+
+/**
+ * Allow SVG files to be uploaded
+ */
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+
+function custom_upload_mimes ( $existing_mimes=array() ) {
+
+  // add the file extension to the array
+
+  $existing_mimes['svg'] = 'mime/type';
+
+        // call the modified list of extensions
+
+  return $existing_mimes;
+
 }
 
 /**

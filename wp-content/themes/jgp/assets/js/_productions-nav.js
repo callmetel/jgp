@@ -8,12 +8,12 @@ $(document).ready(function() {
 		$subpageBg = $('.subpage-bg'),
 		$body = $('#bg-productions'),
 		$toggleMenu = $('.toggle-menu'),
-		$productionsIndexLink = $('#productions-index-link'),
-		$aboutUsLink = $('#about-us-link'),
-		$playsLink = $('#plays-link'),
-		$auditionsLink = $('#auditions-link'),
-		$ticketsLink = $('#tickets-link'),
-		$classesLink = $('#classes-link'),
+		$productionsIndexLink = $('#menu-item-115'),
+		$aboutUsLink = $('#menu-item-116'),
+		$playsLink = $('#menu-item-117'),
+		$auditionsLink = $('#menu-item-118'),
+		$ticketsLink = $('#menu-item-119'),
+		$classesLink = $('#menu-item-120'),
 
 		//State Variables
 		$active = $('.is-active'),
