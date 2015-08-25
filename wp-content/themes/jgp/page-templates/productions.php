@@ -19,6 +19,8 @@ get_header(); ?>
 			<?php include 'partials/productions/header.php'; ?>
 			<?php include 'partials/productions/about-us.php'; ?>
 			<?php include 'partials/productions/plays-grid.php'; ?>
+			<?php include 'partials/productions/audition-text.php'; ?>
+			<?php include 'partials/productions/audition-form.php'; ?>
 			
 			<?php include 'partials/subpg_footer.php'; ?>
 			<?php include 'partials/productions/plays-lightbox.php'; ?>

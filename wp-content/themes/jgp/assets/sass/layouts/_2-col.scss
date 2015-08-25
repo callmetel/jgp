@@ -16,7 +16,7 @@
 	text-align: left;
 	
 	h1, h2, h3, h4, p, button, a, input{
-		margin-left: 50px!important;
+		margin-left: 50px;
 		display: block;
 		margin-bottom: 0;
 	}
@@ -58,4 +58,8 @@
 	width:3px;
 	height:65%;
 	float: left;
+}
+
+.left h1, p{
+	margin-left: 0px!important;
 }

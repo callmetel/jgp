@@ -27,54 +27,56 @@ form{
     overflow: hidden;
     margin-right: 0;
 
-
-    select{
-      width: 100%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: url(../images/dropdown.png) 96% no-repeat;
-      height: 45px;
-      background-color: none;
-      border: 1px solid;
-      @include border-color(transparent transparent $grey8 transparent);
-
-      &:hover{
-        border-color: $grey8;
-      }
+    h1{
+      margin-left:0!important;
     }
 
-    input, textarea{
-      height: 45px;
-      margin-bottom: 0;
-      margin-right: 0;
-      border: 0;
-      outline: none;
-      box-shadow: none;
-      border-radius: 0px;
-      border: 1px solid;
-      @include border-color(transparent transparent $grey8 transparent);
-
+    input,
+    label,
+    select {
+      display: block;
       font-family: $font-book;
+      font-size: 1.875rem;
+    }
 
-      font-size:20px;
-      letter-spacing: -0.02em;
-      // line-height: 64px;
-      color: $black1;
-      resize: none;
-      &:hover,&:active, &:focus{
-        box-shadow: none;
-        border-color: $grey8;
-        border-radius: 2px;
+    label {
+      display:none;
+      font-weight: bold;
+      margin-bottom: $base-spacing / 4;
+
+      &.required:after {
+        content: "*";
       }
 
-      @include placeholder {
-        color: $grey9;
+      abbr {
+        display: none;
       }
     }
-  }
 
-  .gform_footer{
-    padding-top: 42px;
+    textarea,
+    #{$all-text-inputs},
+    select[multiple=multiple] {
+      background-color: transparent;
+      border-radius: 0;
+      border:none;
+      border-bottom: 4px solid white;
+      box-shadow: none;
+      font-family: $font-book;
+      font-size: 1.875rem;
+      text-align: left;
+      padding: ($base-spacing / 3) 0;
+      width: 90%;
+      color:white;
+
+      &:focus {
+      
+        box-shadow: none!important;
+        outline: none !important;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
   }
 }

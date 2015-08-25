@@ -254,6 +254,66 @@ acf_add_local_field_group(array (
 ));
 
 acf_add_local_field_group(array (
+  'key' => 'group_55dcd2b77bdc2',
+  'title' => 'Audition Form Heading & Description',
+  'fields' => array (
+    array (
+      'key' => 'field_55dcd2d112af8',
+      'label' => 'Audition Form Heading',
+      'name' => 'audition_form_heading',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h1>',
+      'tabs' => 'all',
+      'toolbar' => 'basic',
+      'media_upload' => 0,
+    ),
+    array (
+      'key' => 'field_55dcd3eb19600',
+      'label' => 'Audition Form Description',
+      'name' => 'audition_form_description',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam maxime, velit soluta atque saepe, libero voluptatem sequi expedita ea tenetur eaque.</p>',
+      'tabs' => 'all',
+      'toolbar' => 'basic',
+      'media_upload' => 0,
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
   'key' => 'group_55d75ad3c1539',
   'title' => 'Store Location Info',
   'fields' => array (

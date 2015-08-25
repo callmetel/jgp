@@ -14,6 +14,7 @@ $(document).ready(function() {
 		$auditionsLink = $('#menu-item-118'),
 		$ticketsLink = $('#menu-item-119'),
 		$classesLink = $('#menu-item-120'),
+		$auditionFormLink = $('#gform_submit_button_1'),
 
 		//State Variables
 		$active = $('.is-active'),
@@ -48,6 +49,19 @@ $(document).ready(function() {
 	});
 
 	$auditionsLink.on('click', function(){
+		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$subpgHeader.addClass('is-inactive');
+		$plays.addClass('is-inactive');
+		$aboutUs.addClass('is-inactive');
+		$tickets.addClass('is-inactive');
+		$classes.addClass('is-inactive');
+		$body.removeClass('is-scrollable');
+		$auditions.removeClass('is-inactive');
+		$auditions.addClass('is-active');
+		$auditions.addClass('fade-in');
+	});
+
+	$auditionFormLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');

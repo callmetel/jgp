@@ -316,7 +316,7 @@ a, a:hover, button, button:hover, input[type="submit"], input[type="submit"]:hov
   font-size: 45px !important;
   line-height: 40px !important; }
 
-.booking-btn {
+.booking-btn, body .gform_wrapper .gform_footer input[type=submit] {
   width: 290px !important;
   font-size: 2rem !important;
   border: 1px solid white !important;
@@ -325,7 +325,7 @@ a, a:hover, button, button:hover, input[type="submit"], input[type="submit"]:hov
   margin-top: 50px; }
 
 /* Common button styles */
-.button {
+.button, body .gform_wrapper .gform_footer input[type=submit] {
   color: white;
   background-color: black;
   font-family: "bebas_neuebold";
@@ -1040,47 +1040,43 @@ form .ginput_container {
   display: block;
   overflow: hidden;
   margin-right: 0; }
+  form .ginput_container h1 {
+    margin-left: 0 !important; }
+  form .ginput_container input,
+  form .ginput_container label,
   form .ginput_container select {
-    width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url(../images/dropdown.png) 96% no-repeat;
-    height: 45px;
-    background-color: none;
-    border: 1px solid;
-    border-color: transparent transparent #e6e6e6; }
-    form .ginput_container select:hover {
-      border-color: #e6e6e6; }
-  form .ginput_container input, form .ginput_container textarea {
-    height: 45px;
-    margin-bottom: 0;
-    margin-right: 0;
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    border-radius: 0px;
-    border: 1px solid;
-    border-color: transparent transparent #e6e6e6;
+    display: block;
     font-family: "bebas_neuebook";
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    color: #202020;
-    resize: none; }
-    form .ginput_container input:hover, form .ginput_container input:active, form .ginput_container input:focus, form .ginput_container textarea:hover, form .ginput_container textarea:active, form .ginput_container textarea:focus {
-      box-shadow: none;
-      border-color: #e6e6e6;
-      border-radius: 2px; }
-    form .ginput_container input::-webkit-input-placeholder, form .ginput_container textarea::-webkit-input-placeholder {
-      color: #999999; }
-    form .ginput_container input::-moz-placeholder, form .ginput_container textarea::-moz-placeholder {
-      color: #999999; }
-    form .ginput_container input:-moz-placeholder, form .ginput_container textarea:-moz-placeholder {
-      color: #999999; }
-    form .ginput_container input:-ms-input-placeholder, form .ginput_container textarea:-ms-input-placeholder {
-      color: #999999; }
-form .gform_footer {
-  padding-top: 42px; }
+    font-size: 1.875rem; }
+  form .ginput_container label {
+    display: none;
+    font-weight: bold;
+    margin-bottom: 0.375em; }
+    form .ginput_container label.required:after {
+      content: "*"; }
+    form .ginput_container label abbr {
+      display: none; }
+  form .ginput_container textarea,
+  form .ginput_container input[type="color"], form .ginput_container input[type="date"], form .ginput_container input[type="datetime"], form .ginput_container input[type="datetime-local"], form .ginput_container input[type="email"], form .ginput_container input[type="month"], form .ginput_container input[type="number"], form .ginput_container input[type="password"], form .ginput_container input[type="search"], form .ginput_container input[type="tel"], form .ginput_container input[type="text"], form .ginput_container input[type="time"], form .ginput_container input[type="url"], form .ginput_container input[type="week"], form .ginput_container textarea,
+  form .ginput_container select[multiple=multiple] {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 4px solid white;
+    box-shadow: none;
+    font-family: "bebas_neuebook";
+    font-size: 1.875rem;
+    text-align: left;
+    padding: 0.5em 0;
+    width: 90%;
+    color: white; }
+    form .ginput_container textarea:focus,
+    form .ginput_container input[type="color"]:focus, form .ginput_container input[type="date"]:focus, form .ginput_container input[type="datetime"]:focus, form .ginput_container input[type="datetime-local"]:focus, form .ginput_container input[type="email"]:focus, form .ginput_container input[type="month"]:focus, form .ginput_container input[type="number"]:focus, form .ginput_container input[type="password"]:focus, form .ginput_container input[type="search"]:focus, form .ginput_container input[type="tel"]:focus, form .ginput_container input[type="text"]:focus, form .ginput_container input[type="time"]:focus, form .ginput_container input[type="url"]:focus, form .ginput_container input[type="week"]:focus, form .ginput_container textarea:focus,
+    form .ginput_container select[multiple=multiple]:focus {
+      box-shadow: none !important;
+      outline: none !important; }
+  form .ginput_container textarea {
+    resize: vertical; }
 
 /* Layouts */
 footer {
@@ -1792,7 +1788,7 @@ a, a:visited {
 .left, .right {
   text-align: left; }
   .left h1, .left h2, .left h3, .left h4, .left p, .left button, .left a, .left input, .right h1, .right h2, .right h3, .right h4, .right p, .right button, .right a, .right input {
-    margin-left: 50px !important;
+    margin-left: 50px;
     display: block;
     margin-bottom: 0; }
   .left a:hover, .right a:hover {
@@ -1822,6 +1818,9 @@ a, a:visited {
   width: 3px;
   height: 65%;
   float: left; }
+
+.left h1, p {
+  margin-left: 0px !important; }
 
 #plays .plays-grid {
   margin: 50px auto;
