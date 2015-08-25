@@ -434,4 +434,54 @@ acf_add_local_field_group(array (
   'description' => '',
 ));
 
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d9fad65f541',
+  'title' => 'Plays Gallery',
+  'fields' => array (
+    array (
+      'key' => 'field_55d9fadb3923d',
+      'label' => 'Play Gallery',
+      'name' => 'play_gallery',
+      'type' => 'gallery',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => 'plays-grid',
+        'id' => '',
+      ),
+      'min' => 6,
+      'max' => '',
+      'preview_size' => 'thumbnail',
+      'library' => 'all',
+      'min_width' => 225,
+      'min_height' => 225,
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => 'svg, jpg',
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
+  'active' => 1,
+  'description' => '',
+));
+
 endif;

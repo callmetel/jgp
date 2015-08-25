@@ -21,6 +21,7 @@ get_header(); ?>
 			<?php include 'partials/productions/plays-grid.php'; ?>
 			
 			<?php include 'partials/subpg_footer.php'; ?>
+			<?php include 'partials/productions/plays-lightbox.php'; ?>
 			
 
 		<?php endwhile;
