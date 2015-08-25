@@ -2428,6 +2428,9 @@ input[type="submit"] {
     #play-lightbox .single-play img, #class-lightbox .single-play img {
       width: 85%;
       margin-top: 50px; }
+    #play-lightbox .single-play .lightbox-title, #class-lightbox .single-play .lightbox-title {
+      text-transform: uppercase;
+      column-count: 2; }
 
 /* Uses the :target pseudo-class to perform the animations upon clicking the #lightbox anchor */
 #play-lightbox:target, #class-lightbox:target {
