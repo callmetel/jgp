@@ -1819,7 +1819,7 @@ a, a:visited {
   height: 65%;
   float: left; }
 
-.left h1, p {
+#auditions .left h1, #auditions .left p {
   margin-left: 0px !important; }
 
 #plays .plays-grid {
@@ -2430,6 +2430,17 @@ input[type="submit"] {
     #play-lightbox .single-play .lightbox-title, #class-lightbox .single-play .lightbox-title {
       text-transform: uppercase;
       column-count: 2; }
+  #play-lightbox .single-class, #class-lightbox .single-class {
+    margin-top: 100px;
+    max-height: 500px;
+    overflow: hidden; }
+    #play-lightbox .single-class img, #class-lightbox .single-class img {
+      width: 85%;
+      margin-top: 50px;
+      max-height: 500px; }
+    #play-lightbox .single-class .lightbox-title, #class-lightbox .single-class .lightbox-title {
+      text-transform: uppercase;
+      column-count: 2; }
 
 /* Uses the :target pseudo-class to perform the animations upon clicking the #lightbox anchor */
 #play-lightbox:target, #class-lightbox:target {
@@ -2443,6 +2454,9 @@ input[type="submit"] {
 #next-play, #next-class {
   top: 200px !important;
   float: right !important; }
+
+#gallery-1 {
+  display: none !important; }
 
 /* Store Background */
 #bg-h2c::before {

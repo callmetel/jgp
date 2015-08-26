@@ -4,7 +4,10 @@ $(document).ready(function() {
 	$classLightbox = $('#class-lightbox'),
 	$prevPlay = $('#prev-play'),
 	$galleryImage = $('a.play'),
+	$moreInfo = $('a.more-info-link'),
 	$slider = $('div.slide-play'),
+	$sliderClass = $('div.slide-class'),
+	$classes = $('section.classes'),
 	$close = $('.lightbox-close');
 
 	$galleryImage.on('click', function () {
@@ -15,9 +18,19 @@ $(document).ready(function() {
 
 	});
 
+	$moreInfo.on('click', function () {
+		var $btn_val = $(this).index() + 1;
+
+		$classes.filter('more-info-link').eq($btn_val-1).index();
+
+		$sliderClass.eq($btn_val-1).removeClass('is-inactive');
+		$sliderClass.eq($btn_val-1).addClass('is-active');
+
+	});
+
 	$close.on('click', function(){
 		$slider.removeClass('is-active');
 		$slider.addClass('is-inactive');
-	})
+	});
 
 });

@@ -24,6 +24,20 @@
 			column-count: 2;
 		}
 	}
+	.single-class{
+		margin-top: 100px;
+		max-height: 500px;
+		overflow:hidden;
+		img{
+			width:85%;
+			margin-top: 50px;
+			max-height: 500px;
+		}
+		.lightbox-title{
+			text-transform: uppercase;
+			column-count: 2;
+		}
+	}
 
 }
 
@@ -66,4 +80,8 @@ bottom: 0;
 #next-play, #next-class{
 	top: 200px!important;
 	float: right!important;
+}
+
+#gallery-1{
+	display:none!important;
 }

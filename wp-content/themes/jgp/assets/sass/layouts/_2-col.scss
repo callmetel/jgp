@@ -60,6 +60,10 @@
 	float: left;
 }
 
-.left h1, p{
+#auditions{
+	.left {
+		h1, p{
 	margin-left: 0px!important;
+	}
+}
 }
