@@ -65,12 +65,46 @@ function jgp_theme_setup(){
 add_action( 'init', 'jgp_theme_setup' );
 
 /**
- * Remove Original Wysmig Editor from Backend pages
+ * Remove Original Wysiwyg Editor from Backend pages
  */
 
 add_action('init', 'my_remove_editor_from_post_type');
 function my_remove_editor_from_post_type() {
     remove_post_type_support( 'page', 'editor' );
+}
+
+/**
+ * Remove Wyiswg Editor Toolbar
+ */
+
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+  // Uncomment to view format of $toolbars
+  /*
+  echo '< pre >';
+    print_r($toolbars);
+  echo '< /pre >';
+  die;
+  */
+
+  // Add a new toolbar called "Very Simple"
+  // - this toolbar has only 1 row of buttons
+  $toolbars['Very Simple' ] = array();
+  $toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
+
+  // Edit the "Full" toolbar and remove 'code'
+  // - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key
+  if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
+  {
+      unset( $toolbars['Full' ][2][$key] );
+  }
+
+  // remove the 'Basic' toolbar completely
+  unset( $toolbars['Basic' ] );
+
+  // return $toolbars - IMPORTANT!
+  return $toolbars;
 }
 
 /**
@@ -118,8 +152,8 @@ acf_add_local_field_group(array (
       ),
       'default_value' => '',
       'tabs' => 'visual',
-      'toolbar' => 'basic',
-      'media_upload' => 1,
+      'toolbar' => 'very_simple',
+      'media_upload' => 0,
     ),
   ),
   'location' => array (
@@ -147,6 +181,66 @@ acf_add_local_field_group(array (
     0 => 'comments',
     1 => 'author',
   ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55dcd2b77bdc2',
+  'title' => 'Audition Form Heading & Description',
+  'fields' => array (
+    array (
+      'key' => 'field_55dcd2d112af8',
+      'label' => 'Audition Form Heading',
+      'name' => 'audition_form_heading',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h1>',
+      'tabs' => 'visual',
+      'toolbar' => 'very_simple',
+      'media_upload' => 0,
+    ),
+    array (
+      'key' => 'field_55dcd3eb19600',
+      'label' => 'Audition Form Description',
+      'name' => 'audition_form_description',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam maxime, velit soluta atque saepe, libero voluptatem sequi expedita ea tenetur eaque.</p>',
+      'tabs' => 'visual',
+      'toolbar' => 'very_simple',
+      'media_upload' => 0,
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
 ));
@@ -191,6 +285,55 @@ acf_add_local_field_group(array (
     0 => 'comments',
     1 => 'author',
   ),
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_55d9fad65f541',
+  'title' => 'Plays Gallery',
+  'fields' => array (
+    array (
+      'key' => 'field_55d9fadb3923d',
+      'label' => 'Play Gallery',
+      'name' => 'play_gallery',
+      'type' => 'gallery',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => 'plays-grid',
+        'id' => '',
+      ),
+      'min' => 6,
+      'max' => '',
+      'preview_size' => 'thumbnail',
+      'library' => 'all',
+      'min_width' => 225,
+      'min_height' => 225,
+      'min_size' => '',
+      'max_width' => '',
+      'max_height' => '',
+      'max_size' => '',
+      'mime_types' => 'svg, jpg',
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
 ));
@@ -254,14 +397,14 @@ acf_add_local_field_group(array (
 ));
 
 acf_add_local_field_group(array (
-  'key' => 'group_55dcd2b77bdc2',
-  'title' => 'Audition Form Heading & Description',
+  'key' => 'group_55dce3e353a3e',
+  'title' => 'Upcoming Shows',
   'fields' => array (
     array (
-      'key' => 'field_55dcd2d112af8',
-      'label' => 'Audition Form Heading',
-      'name' => 'audition_form_heading',
-      'type' => 'wysiwyg',
+      'key' => 'field_55dce42fdd1af',
+      'label' => 'Upcoming Show',
+      'name' => 'upcoming_show',
+      'type' => 'repeater',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
@@ -270,28 +413,154 @@ acf_add_local_field_group(array (
         'class' => '',
         'id' => '',
       ),
-      'default_value' => '<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h1>',
-      'tabs' => 'all',
-      'toolbar' => 'basic',
-      'media_upload' => 0,
-    ),
-    array (
-      'key' => 'field_55dcd3eb19600',
-      'label' => 'Audition Form Description',
-      'name' => 'audition_form_description',
-      'type' => 'wysiwyg',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
+      'min' => '',
+      'max' => '',
+      'layout' => 'row',
+      'button_label' => 'Add Upcoming Show',
+      'sub_fields' => array (
+        array (
+          'key' => 'field_55dce465dd1b0',
+          'label' => 'Upcoming Play Name',
+          'name' => 'upcoming_play_name',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Upcoming Play Name',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dce607dd1b1',
+          'label' => 'Location Name',
+          'name' => 'location_name',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Location Name',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dce71cdd1b2',
+          'label' => 'Location Address',
+          'name' => 'location_address',
+          'type' => 'text',
+          'instructions' => 'Street Address + City and State(abbrv) ONLY.',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Location Address',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dce7b0dd1b3',
+          'label' => 'Upcoming Show Dates',
+          'name' => 'upcoming_show_dates',
+          'type' => 'text',
+          'instructions' => 'You will ONLY input the Month & Day of the first and last show. Make sure to keep the hyphen and space between the First and Last date.',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Start Date - End Date',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dce9d2dd1b5',
+          'label' => 'Regular Admission Price',
+          'name' => 'regular_admission_price',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Regular Admission Price',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => 2,
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dcecb2dd1b7',
+          'label' => 'Preferred Seating Price',
+          'name' => 'preferred_seating_price',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Preferred Seating Price',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => 2,
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dce944dd1b4',
+          'label' => 'Buy Ticket Link',
+          'name' => 'buy_ticket_link',
+          'type' => 'url',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Link to buy tickets for specific show',
+          'placeholder' => '',
+        ),
       ),
-      'default_value' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam maxime, velit soluta atque saepe, libero voluptatem sequi expedita ea tenetur eaque.</p>',
-      'tabs' => 'all',
-      'toolbar' => 'basic',
-      'media_upload' => 0,
     ),
   ),
   'location' => array (
@@ -314,32 +583,14 @@ acf_add_local_field_group(array (
 ));
 
 acf_add_local_field_group(array (
-  'key' => 'group_55d75ad3c1539',
-  'title' => 'Store Location Info',
+  'key' => 'group_55dde37f48b80',
+  'title' => 'Past Shows',
   'fields' => array (
     array (
-      'key' => 'field_55d75b374b7cf',
-      'label' => 'Map',
-      'name' => 'map',
-      'type' => 'google_map',
-      'instructions' => '',
-      'required' => 1,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'center_lat' => '39.943302',
-      'center_lng' => '-75.162258',
-      'zoom' => 14,
-      'height' => '',
-    ),
-    array (
-      'key' => 'field_55d774674cfeb',
-      'label' => 'Street Address',
-      'name' => 'street_address',
-      'type' => 'url',
+      'key' => 'field_55dde37f4de72',
+      'label' => 'Past Show',
+      'name' => 'past_show',
+      'type' => 'repeater',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
@@ -348,66 +599,154 @@ acf_add_local_field_group(array (
         'class' => '',
         'id' => '',
       ),
-      'default_value' => '1214 South St',
-      'placeholder' => '',
-    ),
-    array (
-      'key' => 'field_55d774924cfec',
-      'label' => 'City State Zip',
-      'name' => 'city_state_zip',
-      'type' => 'url',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
+      'min' => '',
+      'max' => '',
+      'layout' => 'row',
+      'button_label' => 'Add Past Show',
+      'sub_fields' => array (
+        array (
+          'key' => 'field_55dde37f4f91b',
+          'label' => 'Past Play Name',
+          'name' => 'past_play_name',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Past Play Name',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f933',
+          'label' => 'Location Name',
+          'name' => 'location_name',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Location Name',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f946',
+          'label' => 'Location Address',
+          'name' => 'location_address',
+          'type' => 'text',
+          'instructions' => 'Street Address + City and State(abbrv) ONLY.',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Location Address',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f958',
+          'label' => 'Past Show Dates',
+          'name' => 'past_show_dates',
+          'type' => 'text',
+          'instructions' => 'You will ONLY input the Month & Day of the first and last show. Make sure to keep the hyphen and space between the First and Last date.',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Start Date - End Date',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f96a',
+          'label' => 'Regular Admission Price',
+          'name' => 'regular_admission_price',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Regular Admission Price',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => 2,
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f97d',
+          'label' => 'Preferred Seating Price',
+          'name' => 'preferred_seating_price',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Preferred Seating Price',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => 2,
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_55dde37f4f98f',
+          'label' => 'Buy Ticket Link',
+          'name' => 'buy_ticket_link',
+          'type' => 'url',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Link to buy tickets for specific show',
+          'placeholder' => '',
+        ),
       ),
-      'default_value' => 'Philadelphia, Pa 19147',
-      'placeholder' => '',
-    ),
-    array (
-      'key' => 'field_55d777157674a',
-      'label' => 'Weekday Hours',
-      'name' => 'weekday_hours',
-      'type' => 'text',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => 'TUES-FRI 2PM-7PM',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-      'readonly' => 0,
-      'disabled' => 0,
-    ),
-    array (
-      'key' => 'field_55d777c27674b',
-      'label' => 'Weekend Hours',
-      'name' => 'weekend_hours',
-      'type' => 'text',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => 'SAT&SUN 12PM-7PM',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-      'readonly' => 0,
-      'disabled' => 0,
     ),
   ),
   'location' => array (
@@ -415,20 +754,16 @@ acf_add_local_field_group(array (
       array (
         'param' => 'page',
         'operator' => '==',
-        'value' => '2',
+        'value' => '77',
       ),
     ),
   ),
-  'menu_order' => 1,
+  'menu_order' => 0,
   'position' => 'normal',
   'style' => 'default',
   'label_placement' => 'top',
   'instruction_placement' => 'label',
-  'hide_on_screen' => array (
-    0 => 'comments',
-    1 => 'author',
-    2 => 'featured_image',
-  ),
+  'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
 ));
@@ -483,63 +818,13 @@ acf_add_local_field_group(array (
   ),
   'menu_order' => 2,
   'position' => 'normal',
-  'style' => 'default',
+  'style' => 'seamless',
   'label_placement' => 'top',
   'instruction_placement' => 'label',
   'hide_on_screen' => array (
     0 => 'comments',
     1 => 'author',
   ),
-  'active' => 1,
-  'description' => '',
-));
-
-
-acf_add_local_field_group(array (
-  'key' => 'group_55d9fad65f541',
-  'title' => 'Plays Gallery',
-  'fields' => array (
-    array (
-      'key' => 'field_55d9fadb3923d',
-      'label' => 'Play Gallery',
-      'name' => 'play_gallery',
-      'type' => 'gallery',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => 'plays-grid',
-        'id' => '',
-      ),
-      'min' => 6,
-      'max' => '',
-      'preview_size' => 'thumbnail',
-      'library' => 'all',
-      'min_width' => 225,
-      'min_height' => 225,
-      'min_size' => '',
-      'max_width' => '',
-      'max_height' => '',
-      'max_size' => '',
-      'mime_types' => 'svg, jpg',
-    ),
-  ),
-  'location' => array (
-    array (
-      array (
-        'param' => 'page',
-        'operator' => '==',
-        'value' => '77',
-      ),
-    ),
-  ),
-  'menu_order' => 0,
-  'position' => 'normal',
-  'style' => 'default',
-  'label_placement' => 'top',
-  'instruction_placement' => 'label',
-  'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
 ));

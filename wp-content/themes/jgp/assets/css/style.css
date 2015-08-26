@@ -2605,7 +2605,8 @@ footer.fixed-nav {
         letter-spacing: .1px;
         line-height: 1.1rem; }
         .list .ticket-container .ticket li.ticket-info span, .list .ticket-container .ticket li.class-info span, .list .ticket-container .class li.ticket-info span, .list .ticket-container .class li.class-info span, .list .class-container .ticket li.ticket-info span, .list .class-container .ticket li.class-info span, .list .class-container .class li.ticket-info span, .list .class-container .class li.class-info span {
-          font-family: "League Gothic"; }
+          font-family: "League Gothic";
+          text-transform: uppercase; }
 
 #main-header {
   position: relative;

@@ -21,6 +21,9 @@ get_header(); ?>
 			<?php include 'partials/productions/plays-grid.php'; ?>
 			<?php include 'partials/productions/audition-text.php'; ?>
 			<?php include 'partials/productions/audition-form.php'; ?>
+			<?php include 'partials/productions/tickets-list.php'; ?>
+			<?php include 'partials/productions/upcoming-events.php'; ?>
+			<?php include 'partials/productions/past-events.php'; ?>
 			
 			<?php include 'partials/subpg_footer.php'; ?>
 			<?php include 'partials/productions/plays-lightbox.php'; ?>
