@@ -28,44 +28,10 @@
   }
 }
 
-
-// .site-branding {
-// 	text-align: center;
-
-// 	.site-title {
-// 		font-family: $title;
-// 		padding: 40px;
-
-// 		@include media($sm) {
-// 			font-size:35px);
-// 		}
-// 		@include media($smbg) {
-// 			font-size:55px);
-// 		}
-// 		@include media($md) {
-// 			font-size:75px);
-// 		}
-
-// 		a,a:visited {
-// 			line-height: 1;
-// 		}
-
-// 	}
-
-// 	.site-description {
-// 		padding: 25px 0;
-// 		font-size:20px);
-
-// 		@include media($sm) {
-// 			font-size:15px);
-// 		}
-// 		@include media($smbg) {
-// 			font-size:18px);
-// 		}
-// 		@include media($md) {
-// 			font-size:25px);
-// 		}
-// 		font-family: $content;
-// 		font-style: italic;
-// 	}
-// }
+#sub-pg-header{
+  @include media($mobile){
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

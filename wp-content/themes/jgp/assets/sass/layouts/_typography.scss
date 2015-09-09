@@ -28,6 +28,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .productions-h1{
+  color: $white;
+  @include media($mobile){
+    font-size: 5rem;
+    margin-top: 6.5rem;
+    line-height: 5rem;
+  }
   @include media($md-screen){
     font-size: 5.75rem!important;
   }
@@ -37,7 +43,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: $white;
+  @include media($mobile){
+    font-size: 5rem;
+    margin-top: 6.5rem;
+    line-height: 5rem;
+  }
   @include media($md-screen){
  	font-size: 7rem;
   }
@@ -59,6 +69,12 @@ h1 {
 }
 h2 {
   font-family: $font-bold;
+  @include media($mobile){
+    font-size: 1.6rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @include media($md-screen){
 	font-size:1.35rem;
 	letter-spacing: .05rem;
@@ -143,4 +159,29 @@ ol {
 #primary,
 #secondary {
 	font-family: $content;
+}
+
+.nav-desktop a, .nav-desktop a:visited{
+    @include media($md-screen){
+  font-size: 1.35rem;
+  padding:0!important;
+  }
+  @include media($lg-screen){
+  font-size: 1.41125rem;
+  padding:0!important;
+  }
+}
+
+#bg-h2c{
+  h1{
+    @include media($mobile){
+    font-size: 4rem;
+    margin-top: 6.5rem;
+    line-height: 5rem;
+    span{
+      font-size: 4.5rem;
+      line-height: 5rem;
+    }
+  }
+  }
 }

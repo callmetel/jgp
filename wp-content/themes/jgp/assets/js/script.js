@@ -8,7 +8,7 @@ $('body').fadeIn(500);
 // Nav Toggle Animation
 
 $('.toggle-menu').click(function(){
-  $('.nav-toggle').slideToggle(600);
+  $('.menu').toggleClass('is-active is-inactive');
 });
 
 $('.toggle-dropdown').click(function(){
