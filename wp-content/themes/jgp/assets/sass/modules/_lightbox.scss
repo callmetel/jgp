@@ -1,7 +1,7 @@
 
 @import "../base/buttons";
 
-#play-lightbox, #class-lightbox{
+#play-lightbox, #class-lightbox, #events-lightbox{
 	position: fixed;
 	top: -100%;
 	width: 100%;
@@ -44,7 +44,7 @@
 
 /* Uses the :target pseudo-class to perform the animations upon clicking the #lightbox anchor */
 
-#play-lightbox:target, #class-lightbox:target {
+#play-lightbox:target, #class-lightbox:target, #events-lightbox:target {
 opacity: 1;
 top: 0;
 bottom: 0;
@@ -84,4 +84,12 @@ bottom: 0;
 
 #gallery-1{
 	display:none!important;
+}
+
+.slide-event{
+	margin-top:50px;
+	img{
+		width:500px!important;
+		height:auto!important;
+	}
 }

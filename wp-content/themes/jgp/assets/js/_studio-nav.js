@@ -6,16 +6,18 @@ $(document).ready(function() {
 		$calendar = $('#calendar'),
 		$subpageBg = $('.subpage-bg'),
 		$toggleMenu = $('.toggle-menu'),
-		$studioIndexLink = $('#studio-index-link'),
-		$eventsLink = $('#events-link'),
-		$bookingLink = $('#booking-link'),
-		$contactLink = $('#contact-link'),
-		$calendarLink = $('#calendar-link'),
+		$studioIndexLink = $('#menu-item-122'),
+		$eventsLink = $('#menu-item-123'),
+		$bookingLink = $('#menu-item-124'),
+		$contactLink = $('#menu-item-125'),
+		$calendarLink = $('#menu-item-126'),
 
 		//State Variables
 		$active = $('.is-active'),
 		$inactive = $('.is-inactive');
 
+
+//Click Functions
 
 	$eventsLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');

@@ -27,20 +27,46 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+.productions-h1{
+  @include media($md-screen){
+    font-size: 5.75rem!important;
+  }
+  @include media($lg-screen){
+    font-size: 8.25rem!important;
+  }
+}
+
 h1 {
-  font-size:8.71687rem;
   color: $white;
+  @include media($md-screen){
+ 	font-size: 7rem;
+  }
+  @include media($lg-screen){
+    font-size:8.71687rem;
+  }
   span{
-    font-size: 15.1531rem;
-    vertical-align: middle;
+  	vertical-align: middle;
     padding-left: 3px;
     padding-right: 3px;
+  	@include media($md-screen){
+  	  font-size: 12rem;
+  	}
+  	@include media($lg-screen){
+      font-size: 15.1531rem;
+	}
   }
 
 }
 h2 {
   font-family: $font-bold;
+  @include media($md-screen){
+	font-size:1.35rem;
+	letter-spacing: .05rem;
+  }
+  @include media($lg-screen){
 	font-size:1.875rem;
+	letter-spacing: 0;
+  }
 }
 h3 {
 	font-size:24px;
@@ -77,10 +103,15 @@ strong, b {
 }
 a, a:visited {
   font-family: $font-bold;
-  font-size: 1.41125rem;
   @include transition(all .5s ease-in-out);
-	text-decoration: none;
+  text-decoration: none;
   color: $white;
+  @include media($md-screen){
+	font-size: 1.35rem;
+  }
+  @include media($lg-screen){
+	font-size: 1.41125rem;
+  }
   &:hover{
     @include transition(all .5s ease-in-out);
     border-top:4px solid white;

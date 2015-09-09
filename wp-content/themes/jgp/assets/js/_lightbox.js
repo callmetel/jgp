@@ -4,8 +4,10 @@ $(document).ready(function() {
 	$classLightbox = $('#class-lightbox'),
 	$prevPlay = $('#prev-play'),
 	$galleryImage = $('a.play'),
+	$galleryEvent = $('a.event'),
 	$moreInfo = $('a.more-info-link'),
 	$slider = $('div.slide-play'),
+	$eventslider = $('div.slide-event'),
 	$sliderClass = $('div.slide-class'),
 	$classes = $('section.classes'),
 	$close = $('.lightbox-close');
@@ -15,6 +17,14 @@ $(document).ready(function() {
 		
 		$slider.eq($img_val-1).removeClass('is-inactive');
 		$slider.eq($img_val-1).addClass('is-active');
+
+	});
+
+	$galleryEvent.on('click', function () {
+		var $img_val = $(this).index() + 1;
+
+		$eventslider.eq($img_val-1).removeClass('is-inactive');
+		$eventslider.eq($img_val-1).addClass('is-active');
 
 	});
 
@@ -30,7 +40,11 @@ $(document).ready(function() {
 
 	$close.on('click', function(){
 		$slider.removeClass('is-active');
-		$slider.addClass('is-inactive');
+		$slider.removeClass('is-active');
+		$eventslider.removeClass('is-active');
+		$eventslider.addClass('is-inactive');
+		$sliderClass.addClass('is-inactive');
+		$sliderClass.addClass('is-inactive');
 	});
 
 });

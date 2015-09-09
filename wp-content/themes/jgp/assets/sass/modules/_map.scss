@@ -1,8 +1,15 @@
 .google-map{
 	#map-canvas{
-		width:350px;
-		height:350px;
 		top:60px;
 		left:50px;
+
+		@include media($md-screen){
+			width:15.625rem;
+			height:15.625rem;
+		}
+		@include media($lg-screen){
+			width:21.875rem;
+			height:21.875rem;
+		}
 	}
 }

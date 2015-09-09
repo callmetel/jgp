@@ -8,3 +8,14 @@
 		margin-right: 50px;
 	}
 }
+
+section#calendar, section#booking, section#contact{
+	margin-left: auto;
+	margin-right: auto;
+	@include media($md-screen){
+		width: 90%;
+	}
+	@include media($lg-screen){
+		width:100%;
+	}
+}

@@ -30,7 +30,12 @@
 	.nav-desktop{
 		li{
 			display: inline-block;
-			@include pad(2.5rem);
+			@include media($md-screen){
+				@include pad(2rem);
+			}
+			@include media($lg-screen){
+				@include pad(2.5rem);
+			}
 		}
 	}
 	.nav-logo{
@@ -42,7 +47,34 @@
 }
 
 .wrap-subpg{
-		width:61.875rem;
-		margin: 0 auto;
-		height: 100vh;
+	margin: 0 auto;
+	height: 100vh;
+
+	@include media($md-screen){
+		width:48rem;
 	}
+	@include media($lg-screen){
+		width:61.875rem;
+	}
+}
+
+//Productions sections layout media queries
+
+section#about-us, section#plays, section#auditions, section#tickets, section#classes{
+	margin-left: auto;
+	margin-right: auto;
+	@include media($md-screen){
+		width: 90%;
+	}
+	@include media($lg-screen){
+		width:100%;
+	}
+}
+
+#about-us, #plays, #tickets, #classes{
+	@include media($rg-min){
+	height: 70vh;
+    overflow-y: auto;
+	}
+}
+

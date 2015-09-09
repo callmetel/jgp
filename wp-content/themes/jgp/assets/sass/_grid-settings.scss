@@ -20,13 +20,19 @@ $hg: new-breakpoint(min-width 1140px 12);
 
 $sm-mobile: new-breakpoint(max-width 600px 6);
 $md-mobile: new-breakpoint(min-width 601px 6);
-$mobile: new-breakpoint(max-width 768px 6);
-$rg-min: new-breakpoint(min-width 769px 12);
+$mobile: new-breakpoint(max-width 767px 6);
+$rg-min: new-breakpoint(min-width 768px 12);
 $rg-max: new-breakpoint(max-width 992px 12);
 $lg-min: new-breakpoint(min-width 993px 12);
 $lg-max: new-breakpoint(max-width 1200px 12);
 $xl-min: new-breakpoint(min-width 1201px 12);
 $xl-max: new-breakpoint(max-width 1440px);
+
+//subpage breakpoints
+$md-screen: new-breakpoint(min-width 768px, max-width 1010px);
+$lg-screen: new-breakpoint(min-width 1011px);
+
+
 
 //height breakpoint
 

@@ -15,6 +15,8 @@ $(document).ready(function() {
 		$inactive = $('.is-inactive');
 
 
+//Click Functions
+
 	$ourStoryLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');

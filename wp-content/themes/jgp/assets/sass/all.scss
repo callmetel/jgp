@@ -1,5 +1,4 @@
 /* Base Styling */
-@import "components/_ui-bourbon.scss";
 @import "components/_variables.scss";
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
@@ -9,7 +8,6 @@
 /* Components */
 
 @import "components/_buttons.scss";
-@import "components/_dashicons.scss";
 @import "components/_font-face.scss";
 @import "components/_form.scss";
 
@@ -27,6 +25,7 @@
 @import "layouts/_studio-layout.scss";
 @import "layouts/_2-col.scss";
 @import "layouts/_plays-grid.scss";
+@import "layouts/_events-grid.scss";
 @import "layouts/_about.scss";
 
 /* Mixins */
