@@ -33,6 +33,7 @@ function jgp_load_javascript_files() {
   }
 
   if ( is_page( 2 ) ) {
+    wp_enqueue_script('global_script');
     wp_enqueue_script('store_nav', get_template_directory_uri() . '/assets/js/_store-nav.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
   }
