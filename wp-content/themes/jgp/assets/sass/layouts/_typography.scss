@@ -102,6 +102,16 @@ p{
   line-height: 3.5rem;
   letter-spacing: .1rem;
 }
+#our-story p, #donate p, #about-us p{
+  @include media($mobile){
+    @include pad(15px);
+  }
+}
+#about-us p{
+  @include media($mobile){
+    margin-top: 3.125rem;
+  }
+}
 
 blockquote {
 	background-color: #f9f9f9;

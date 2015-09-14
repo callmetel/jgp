@@ -24,11 +24,9 @@ get_header(); ?>
 			<?php include 'partials/productions/tickets-list.php'; ?>
 			<?php include 'partials/productions/upcoming-events.php'; ?>
 			<?php include 'partials/productions/past-events.php'; ?>
-			<?php include 'partials/productions/class-list.php'; ?>
 			
 			<?php include 'partials/subpg_footer.php'; ?>
 			<?php include 'partials/productions/plays-lightbox.php'; ?>
-			<?php include 'partials/productions/class-lightbox.php'; ?>
 			
 
 		<?php endwhile;

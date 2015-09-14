@@ -1,12 +1,20 @@
 #about{
 	text-align: center;
 	.about-shape-container{
-		padding-top:30px;
 		padding-bottom:30px;
-		clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
-		-webkit-clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
 		background-color: white;
 		color: black;
+		@include media($mobile){
+			padding-top: 1px;
+			clip-path:none;
+			-webkit-clip-path:none;
+		}
+		@include media($rg-min){
+		padding-top:30px;
+		clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
+		-webkit-clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);	
+		}
+		
 		h1{
 			color: black;
 		}
@@ -20,9 +28,14 @@
 		}
 		.about-text{
 			font-size: 1.25rem;
-			width:50%;
 			text-align:center;
 			margin:0 auto;
+			@include media($mobile){
+				width:90%;
+			}
+			@include media($rg-min){
+				width:50%;
+			}
 		}
 	}
 }

@@ -1,4 +1,7 @@
 footer.fixed-nav{
+    @include media($mobile){
+        display:none;
+    }
 	height: 15vh;
     color: #fff;
     background-color: black;

@@ -24,6 +24,7 @@ $(document).ready(function() {
 //Click Functions
 
 	$aboutUsLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
@@ -37,6 +38,7 @@ $(document).ready(function() {
 	});
 
 	$playsLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
@@ -51,6 +53,7 @@ $(document).ready(function() {
 	});
 
 	$auditionsLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
@@ -64,6 +67,7 @@ $(document).ready(function() {
 	});
 
 	$auditionFormLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
@@ -77,6 +81,7 @@ $(document).ready(function() {
 	});
 
 	$ticketsLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
@@ -90,6 +95,7 @@ $(document).ready(function() {
 	});
 
 	$classesLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
@@ -102,6 +108,7 @@ $(document).ready(function() {
 	});
 
 	$productionsIndexLink.on('click', function(){
+		$('.menu').toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blurOut 1s linear forwards;}</style>');
 		$aboutUs.addClass('is-inactive');
 		$plays.addClass('is-inactive');

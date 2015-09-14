@@ -54,6 +54,14 @@ ul{
 	}
 }
 
+section{
+	@include media($mobile){
+		height:80vh;
+    	overflow-y:auto;	
+	}
+	
+}
+
 // #main {
 // 	padding: 0 50px;
 // }

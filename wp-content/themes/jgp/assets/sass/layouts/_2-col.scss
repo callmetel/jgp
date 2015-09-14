@@ -1,24 +1,44 @@
 .left{
-	width:49%;
-	float: left;
-	margin-left:auto;
-	margin-right: auto;
+	@include media($mobile){
+		width:100%;
+		display: block;
+		@include pad(10px);
+	}
+	@include media($rg-min){
+		width:49%;
+		float: left;
+		margin-left:auto;
+		margin-right: auto;
+	}
 }
 
 .right{
-	width:49%;
-	float: right;
-	margin-left:auto;
-	margin-right: auto;
+	@include media($mobile){
+		width:100%;
+		display: block;
+		@include pad(10px);
+	}
+	@include media($rg-min){
+		width:49%;
+		float: right;
+		margin-left:auto;
+		margin-right: auto;
+	}
 }
 
 .left, .right{
-	text-align: left;
-	
+	@include media($mobile){
+		text-align: center;
+	}
+	@include media($rg-min){
+		text-align: left;
+	}
 	h1, h2, h3, h4, p, button, a, input{
-		margin-left: 50px;
 		display: block;
 		margin-bottom: 0;
+		@include media($rg-min){
+			margin-left: 50px;
+		}
 	}
 
 	a:hover{
@@ -55,15 +75,25 @@
 
 .divider{
 	background-color:white;
-	width:3px;
-	height:65%;
-	float: left;
+	@include media($mobile){
+		width:80%;
+		height: 3px;
+		margin:5px auto;
+	}
+	@include media($rg-min){
+		width:3px;
+		height:65%;
+		float: left;	
+	}
+	
 }
 
 #auditions{
 	.left {
-		h1, p{
-	margin-left: 0px!important;
+		@include media($rg-min){
+			h1, p{
+				margin-left: 0px!important;
+			}
+		}
 	}
-}
 }

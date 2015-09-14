@@ -1,9 +1,15 @@
 #main-header{
 	position:relative;
 	margin-top: -20px;
-	height: 650px;
-	margin-bottom: 15px;
 	overflow: hidden;
+	@include media($mobile){
+		height:100vh;
+		margin-bottom:25px;
+	}
+	@include media($rg-min){
+		height: 650px;
+		margin-bottom: 15px;
+	}
 	.main-header{
 		width:100%;
 		max-width: 90rem;
@@ -14,54 +20,82 @@
 		margin-right: auto;
 
 		li{
+			list-style: none!important;
 			width:100%;
 			height:100%;
-			@include filter(brightness(30%) grayscale(100%));
-			h4.header-text {
-				position: absolute;
-				font-size: 0px;
-				color:white;
-				z-index: 3;
-				text-transform: uppercase;
-				text-align: center;
-				span{
-					font-size: 0px;
-					font-family: $font-regular;
-					letter-spacing: .2rem;
-				}
-				span.big2{
-					font-size: 0;
-					font-family: $title;
-					letter-spacing: -.1rem;
-				}
-
-			}
-			&:hover{
-				@include filter(brightness(87%) grayscale(0%));
-				h4.header-text{
-					font-size: 3.27687rem;
-					line-height: 3.125rem!important;
+			h4.header-text{
+				cursor:pointer;
+				@include media($mobile){
+					font-size: 1.875rem;
+					line-height: 1.5rem!important;
+					text-transform: uppercase;
+					margin-top: 20px;
+					width:97%;
+					position:absolute;
 					span{
-						font-size: 1.4rem;
+						font-size:1rem;
+						letter-spacing: .2rem;
+						font-family: $font-regular;
 					}
 					span.big2{
-						font-size: 5.70375rem;
+						font-size: 2.24688rem;
+						letter-spacing: 0;
+						font-family: $title;
+					}
+				}
+			}
+			@include media($rg-min){
+				display:inline-block;
+				@include filter(brightness(30%) grayscale(100%));
+				h4.header-text {
+					position: absolute;
+					font-size: 0px;
+					color:white;
+					z-index: 3;
+					text-transform: uppercase;
+					text-align: center;
+					span{
+						font-size: 0px;
+						font-family: $font-regular;
+						letter-spacing: .2rem;
+					}
+					span.big2{
+						font-size: 0;
+						font-family: $title;
+						letter-spacing: -.1rem;
 					}
 				}
 
-			}
-			@include media($rg-min){
-				display: inline-block;
+				&:hover{
+					@include filter(brightness(87%) grayscale(0%));
+					h4.header-text{
+						font-size: 3.27687rem;
+						line-height: 3.125rem!important;
+						span{
+							font-size: 1.4rem;
+						}
+						span.big2{
+							font-size: 5.70375rem;
+						}
+					}
+				}
 			}
 		}
 
 		#store{
-			background-image: url(../images/bg-h2c.jpg);
-			background-position: 60% 20%;
-			position: absolute;
 			z-index: 2;
+			@include media($mobile){
+				position:initial;
+				overflow:hidden;
+				height: 33.3333333%;
+    			-webkit-clip-path: polygon(0 0, 100% 0, 100% 23%, 0% 33%);
+    			clip-path: polygon(0 0, 100% 0, 100% 23%, 0% 33%);
+			}
 			@include media($rg-min){
 				width: 47%;
+				background-image: url(../images/bg-h2c.jpg);
+				background-position: 60% 20%;
+				position: absolute;
 				border-bottom: 85vh solid black;
 				border-left: 395px solid transparent;
         	}
@@ -71,18 +105,47 @@
 			@include media($xl-min){
 				border-left: 660px solid transparent;
 			}
+			.header-bg-img{
+				@include media($mobile){
+					height: 33%;
+					position: absolute;
+					background: url(../images/bg-h2c.jpg);
+				    background-size: cover;
+				    width: 100%;
+					top:0;
+					@include filter(brightness(50%));
+				}
+				@include media($rg-min){
+					display:none;
+				}
+			}
 			h4.header-text {
 			    z-index: 3;
-			    top: 240px;
-			    right: 370px;
+			    @include media($mobile){
+			    	left:15px;
+
+			    }
+			    @include media($lg-min){
+			    	top: 90px;
+    				right: 220px;
+			    }
+			    @include media($xl-min){
+			    	top: 240px;
+			    	right: 370px;
+			    }
 			}
 		}
 		#productions{
-			position: absolute;
 			z-index: 3;
 		    overflow: hidden;
-
+			@include media($mobile){
+				position:initial;
+				height: 33.3333333%;
+    			-webkit-clip-path: polygon(0 35%, 100% 25%, 100% 64%, 0 51%);
+    			clip-path: polygon(0 35%, 100% 25%, 100% 64%, 0 51%);
+			}
 			@include media($rg-min){
+				position: absolute;
 				border-left: 10px solid black;
 		    	border-right: 15px solid black;
 				width:395px;
@@ -90,38 +153,53 @@
 				left:204px;
         	}
 		    @include media($lg-min){
+		    	position: absolute;
 		    	width:560px;
 				@include transform(skew(-41.25deg));
 				left:290px;
 			}
 			@include media($xl-min){
+				position: absolute;
 				width: 660px;
 				@include transform(skew(-46deg));
 				left:345px;
 			}
 			h4.header-text {
 			    z-index: 4;
-			    top: 250px;
-			    left:130px;
+			    @include media($mobile){
+			    	text-align: right;
+			    }
 			    @include media($rg-min){
 					@include transform(skew(31.8deg));
+					top: 240px;
+    				left: 30px;
 	        	}
 			    @include media($lg-min){
 					@include transform(skew(41.25deg));
+					top: 250px;
+    				left: 90px;
 				}
 				@include media($xl-min){
 					@include transform(skew(46deg));
+					top: 250px;
+			    	left:130px;
 				}
 			}
 			.header-bg-img {
-				width: 200%;
-				height: 100%;
 				position: absolute;
 				background: url(../images/bg-productions.jpg);
-			    /* background-position: center; */
 			    background-size: cover;
 
+			    @include media($mobile){
+					width: 100%;
+					@include filter(brightness(50%));
+					top: 170px;
+					height:40%;
+				}
+				
 				@include media($rg-min){
+					height:100%;
+					width: 200%;
 					top: 0%;
 					left: -50%;
 					background-position-y: 0px;
@@ -136,16 +214,53 @@
 			}
 		}
 		#studio{
-			position: absolute;
 			z-index: 1;
-			right: -90px;
-			background:url(../images/bg-studio.jpg);
-			background-position-x: 60%;
-			width:60%;
+			@include media($mobile){
+				position:initial;
+				height: 33.3333333%;
+    			overflow: hidden;
+    			-webkit-clip-path: polygon(0 53%, 100% 66%, 100% 100%, 0 100%);
+    			clip-path: polygon(0 53%, 100% 66%, 100% 100%, 0 100%);
+			}
+			@include media($rg-min){
+			    position: absolute;
+			    background:url(../images/bg-studio.jpg);
+				background-position-x: 60%;
+				width:60%;
+		    	right: -90px;
+			}
+			.header-bg-img{
+				@include media($mobile){
+					height: 40%;
+					position: absolute;
+					background: url(../images/bg-studio.jpg);
+				    background-size: cover;
+				    width: 100%;
+					bottom:0;
+					@include filter(brightness(50%));
+				}
+				@include media($rg-min){
+					display:none;
+				}
+			}
 			 h4.header-text {
 			    z-index: 3;
-			    top: 250px;
-			    left: 485px;
+			    @include media($mobile){
+			    	left: 15px;
+    				text-align: left;
+			    }
+			    @include media($rg-min){
+			        top: 360px;
+    				left: 190px;
+    			}
+			    @include media($lg-min){
+				    top: 390px;
+	    			left: 315px;
+    			}
+    			@include media($xl-min){
+				    top: 250px;
+				    left: 485px;
+				}
 			}
 		}
 	}

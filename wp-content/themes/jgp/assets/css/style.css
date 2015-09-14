@@ -601,8 +601,13 @@ footer.social-media #icons-wrap a {
 
 #contact-home {
   margin-top: 0px;
-  padding-top: 4.375rem;
-  padding-bottom: 12.5rem; }
+  padding-top: 4.375rem; }
+  @media screen and (max-width: 767px) {
+    #contact-home {
+      padding-bottom: 2.5rem; } }
+  @media screen and (min-width: 768px) {
+    #contact-home {
+      padding-bottom: 12.5rem; } }
   #contact-home h1 {
     font-size: 5.075rem;
     font-family: "bebas_neuebold";
@@ -639,10 +644,18 @@ footer.social-media #icons-wrap a {
           width: 70%; } }
       #contact-home form .contact-submit .user-input {
         width: 100%; }
-        #contact-home form .contact-submit .user-input input {
-          display: inline-block;
-          width: 47%;
-          margin: 0 6px; }
+        @media screen and (max-width: 767px) {
+          #contact-home form .contact-submit .user-input input {
+            display: block;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 35px; } }
+        @media screen and (min-width: 768px) {
+          #contact-home form .contact-submit .user-input input {
+            display: inline-block;
+            width: 47%;
+            margin: 0 6px; } }
       #contact-home form .contact-submit .submit-button {
         color: white;
         font-size: 1.755rem;
@@ -1083,6 +1096,11 @@ ul {
   .hide-mobile {
     display: none; } }
 
+@media screen and (max-width: 767px) {
+  section {
+    height: 80vh;
+    overflow-y: auto; } }
+
 /* =Typography
 -------------------------------------------------------------- */
 html {
@@ -1177,6 +1195,14 @@ p {
   font-size: 1.5rem;
   line-height: 3.5rem;
   letter-spacing: .1rem; }
+
+@media screen and (max-width: 767px) {
+  #our-story p, #donate p, #about-us p {
+    padding: 15px; } }
+
+@media screen and (max-width: 767px) {
+  #about-us p {
+    margin-top: 3.125rem; } }
 
 blockquote {
   background-color: #f9f9f9;
@@ -1348,54 +1374,80 @@ section#calendar, section#booking, section#contact {
     section#calendar, section#booking, section#contact {
       width: 100%; } }
 
-.left {
-  width: 49%;
-  float: left;
-  margin-left: auto;
-  margin-right: auto; }
-
-.right {
-  width: 49%;
-  float: right;
-  margin-left: auto;
-  margin-right: auto; }
-
-.left, .right {
-  text-align: left; }
-  .left h1, .left h2, .left h3, .left h4, .left p, .left button, .left a, .left input, .right h1, .right h2, .right h3, .right h4, .right p, .right button, .right a, .right input {
-    margin-left: 50px;
+@media screen and (max-width: 767px) {
+  .left {
+    width: 100%;
     display: block;
-    margin-bottom: 0; }
-  .left a:hover, .right a:hover {
-    border: none;
-    text-decoration: underline; }
-  .left h1, .right h1 {
-    font-family: "League Gothic";
-    font-size: 3.1875rem;
-    line-height: 5.5625rem;
-    letter-spacing: .1rem; }
-  .left h2, .right h2 {
-    font-family: "League Gothic";
-    font-size: 1.9375rem;
-    line-height: 3.3625rem;
-    letter-spacing: .1rem;
-    text-transform: uppercase; }
-  .left a, .left h3, .right a, .right h3 {
-    font-family: "bebas_neue_regularregular";
-    font-size: 1.4375rem;
-    letter-spacing: .1rem; }
-    .left a span, .left h3 span, .right a span, .right h3 span {
-      margin-left: 20px;
-      font-family: "bebas_neuebold"; }
+    padding: 10px; } }
+@media screen and (min-width: 768px) {
+  .left {
+    width: 49%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media screen and (max-width: 767px) {
+  .right {
+    width: 100%;
+    display: block;
+    padding: 10px; } }
+@media screen and (min-width: 768px) {
+  .right {
+    width: 49%;
+    float: right;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media screen and (max-width: 767px) {
+  .left, .right {
+    text-align: center; } }
+@media screen and (min-width: 768px) {
+  .left, .right {
+    text-align: left; } }
+.left h1, .left h2, .left h3, .left h4, .left p, .left button, .left a, .left input, .right h1, .right h2, .right h3, .right h4, .right p, .right button, .right a, .right input {
+  display: block;
+  margin-bottom: 0; }
+  @media screen and (min-width: 768px) {
+    .left h1, .left h2, .left h3, .left h4, .left p, .left button, .left a, .left input, .right h1, .right h2, .right h3, .right h4, .right p, .right button, .right a, .right input {
+      margin-left: 50px; } }
+.left a:hover, .right a:hover {
+  border: none;
+  text-decoration: underline; }
+.left h1, .right h1 {
+  font-family: "League Gothic";
+  font-size: 3.1875rem;
+  line-height: 5.5625rem;
+  letter-spacing: .1rem; }
+.left h2, .right h2 {
+  font-family: "League Gothic";
+  font-size: 1.9375rem;
+  line-height: 3.3625rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase; }
+.left a, .left h3, .right a, .right h3 {
+  font-family: "bebas_neue_regularregular";
+  font-size: 1.4375rem;
+  letter-spacing: .1rem; }
+  .left a span, .left h3 span, .right a span, .right h3 span {
+    margin-left: 20px;
+    font-family: "bebas_neuebold"; }
 
 .divider {
-  background-color: white;
-  width: 3px;
-  height: 65%;
-  float: left; }
+  background-color: white; }
+  @media screen and (max-width: 767px) {
+    .divider {
+      width: 80%;
+      height: 3px;
+      margin: 5px auto; } }
+  @media screen and (min-width: 768px) {
+    .divider {
+      width: 3px;
+      height: 65%;
+      float: left; } }
 
-#auditions .left h1, #auditions .left p {
-  margin-left: 0px !important; }
+@media screen and (min-width: 768px) {
+  #auditions .left h1, #auditions .left p {
+    margin-left: 0px !important; } }
 
 #plays .plays-grid {
   margin: 50px auto;
@@ -1456,12 +1508,19 @@ section#calendar, section#booking, section#contact {
 #about {
   text-align: center; }
   #about .about-shape-container {
-    padding-top: 30px;
     padding-bottom: 30px;
-    clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
     background-color: white;
     color: black; }
+    @media screen and (max-width: 767px) {
+      #about .about-shape-container {
+        padding-top: 1px;
+        clip-path: none;
+        -webkit-clip-path: none; } }
+    @media screen and (min-width: 768px) {
+      #about .about-shape-container {
+        padding-top: 30px;
+        clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 80% 53%, 100% 100%, 0 100%, 20% 53%); } }
     #about .about-shape-container h1 {
       color: black; }
     #about .about-shape-container span {
@@ -1472,9 +1531,14 @@ section#calendar, section#booking, section#contact {
       font-size: 2.71375rem; }
     #about .about-shape-container .about-text {
       font-size: 1.25rem;
-      width: 50%;
       text-align: center;
       margin: 0 auto; }
+      @media screen and (max-width: 767px) {
+        #about .about-shape-container .about-text {
+          width: 90%; } }
+      @media screen and (min-width: 768px) {
+        #about .about-shape-container .about-text {
+          width: 50%; } }
 
 /* Mixins */
 @-webkit-keyframes pulse-animation {
@@ -2177,6 +2241,9 @@ footer.fixed-nav {
   background-color: black;
   width: 100%;
   padding: 15px; }
+  @media screen and (max-width: 767px) {
+    footer.fixed-nav {
+      display: none; } }
   footer.fixed-nav #menu-item-140 {
     padding: 0; }
     footer.fixed-nav #menu-item-140 img {
@@ -2311,9 +2378,15 @@ footer.fixed-nav {
 #main-header {
   position: relative;
   margin-top: -20px;
-  height: 650px;
-  margin-bottom: 15px;
   overflow: hidden; }
+  @media screen and (max-width: 767px) {
+    #main-header {
+      height: 100vh;
+      margin-bottom: 25px; } }
+  @media screen and (min-width: 768px) {
+    #main-header {
+      height: 650px;
+      margin-bottom: 15px; } }
   #main-header .main-header {
     width: 100%;
     max-width: 90rem;
@@ -2323,46 +2396,72 @@ footer.fixed-nav {
     margin-left: auto;
     margin-right: auto; }
     #main-header .main-header li {
+      list-style: none !important;
       width: 100%;
-      height: 100%;
-      -webkit-filter: brightness(30%) grayscale(100%);
-      filter: brightness(30%) grayscale(100%); }
+      height: 100%; }
       #main-header .main-header li h4.header-text {
-        position: absolute;
-        font-size: 0px;
-        color: white;
-        z-index: 3;
-        text-transform: uppercase;
-        text-align: center; }
-        #main-header .main-header li h4.header-text span {
-          font-size: 0px;
-          font-family: "bebas_neue_regularregular";
-          letter-spacing: .2rem; }
-        #main-header .main-header li h4.header-text span.big2 {
-          font-size: 0;
-          font-family: "League Gothic";
-          letter-spacing: -.1rem; }
-      #main-header .main-header li:hover {
-        -webkit-filter: brightness(87%) grayscale(0%);
-        filter: brightness(87%) grayscale(0%); }
-        #main-header .main-header li:hover h4.header-text {
-          font-size: 3.27687rem;
-          line-height: 3.125rem !important; }
-          #main-header .main-header li:hover h4.header-text span {
-            font-size: 1.4rem; }
-          #main-header .main-header li:hover h4.header-text span.big2 {
-            font-size: 5.70375rem; }
+        cursor: pointer; }
+        @media screen and (max-width: 767px) {
+          #main-header .main-header li h4.header-text {
+            font-size: 1.875rem;
+            line-height: 1.5rem !important;
+            text-transform: uppercase;
+            margin-top: 20px;
+            width: 97%;
+            position: absolute; }
+            #main-header .main-header li h4.header-text span {
+              font-size: 1rem;
+              letter-spacing: .2rem;
+              font-family: "bebas_neue_regularregular"; }
+            #main-header .main-header li h4.header-text span.big2 {
+              font-size: 2.24688rem;
+              letter-spacing: 0;
+              font-family: "League Gothic"; } }
       @media screen and (min-width: 768px) {
         #main-header .main-header li {
-          display: inline-block; } }
+          display: inline-block;
+          -webkit-filter: brightness(30%) grayscale(100%);
+          filter: brightness(30%) grayscale(100%); }
+          #main-header .main-header li h4.header-text {
+            position: absolute;
+            font-size: 0px;
+            color: white;
+            z-index: 3;
+            text-transform: uppercase;
+            text-align: center; }
+            #main-header .main-header li h4.header-text span {
+              font-size: 0px;
+              font-family: "bebas_neue_regularregular";
+              letter-spacing: .2rem; }
+            #main-header .main-header li h4.header-text span.big2 {
+              font-size: 0;
+              font-family: "League Gothic";
+              letter-spacing: -.1rem; }
+          #main-header .main-header li:hover {
+            -webkit-filter: brightness(87%) grayscale(0%);
+            filter: brightness(87%) grayscale(0%); }
+            #main-header .main-header li:hover h4.header-text {
+              font-size: 3.27687rem;
+              line-height: 3.125rem !important; }
+              #main-header .main-header li:hover h4.header-text span {
+                font-size: 1.4rem; }
+              #main-header .main-header li:hover h4.header-text span.big2 {
+                font-size: 5.70375rem; } }
     #main-header .main-header #store {
-      background-image: url(../images/bg-h2c.jpg);
-      background-position: 60% 20%;
-      position: absolute;
       z-index: 2; }
+      @media screen and (max-width: 767px) {
+        #main-header .main-header #store {
+          position: initial;
+          overflow: hidden;
+          height: 33.3333333%;
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 23%, 0% 33%);
+          clip-path: polygon(0 0, 100% 0, 100% 23%, 0% 33%); } }
       @media screen and (min-width: 768px) {
         #main-header .main-header #store {
           width: 47%;
+          background-image: url(../images/bg-h2c.jpg);
+          background-position: 60% 20%;
+          position: absolute;
           border-bottom: 85vh solid black;
           border-left: 395px solid transparent; } }
       @media screen and (min-width: 993px) {
@@ -2371,16 +2470,44 @@ footer.fixed-nav {
       @media screen and (min-width: 1201px) {
         #main-header .main-header #store {
           border-left: 660px solid transparent; } }
+      @media screen and (max-width: 767px) {
+        #main-header .main-header #store .header-bg-img {
+          height: 33%;
+          position: absolute;
+          background: url(../images/bg-h2c.jpg);
+          background-size: cover;
+          width: 100%;
+          top: 0;
+          -webkit-filter: brightness(50%);
+          filter: brightness(50%); } }
+      @media screen and (min-width: 768px) {
+        #main-header .main-header #store .header-bg-img {
+          display: none; } }
       #main-header .main-header #store h4.header-text {
-        z-index: 3;
-        top: 240px;
-        right: 370px; }
+        z-index: 3; }
+        @media screen and (max-width: 767px) {
+          #main-header .main-header #store h4.header-text {
+            left: 15px; } }
+        @media screen and (min-width: 993px) {
+          #main-header .main-header #store h4.header-text {
+            top: 90px;
+            right: 220px; } }
+        @media screen and (min-width: 1201px) {
+          #main-header .main-header #store h4.header-text {
+            top: 240px;
+            right: 370px; } }
     #main-header .main-header #productions {
-      position: absolute;
       z-index: 3;
       overflow: hidden; }
+      @media screen and (max-width: 767px) {
+        #main-header .main-header #productions {
+          position: initial;
+          height: 33.3333333%;
+          -webkit-clip-path: polygon(0 35%, 100% 25%, 100% 64%, 0 51%);
+          clip-path: polygon(0 35%, 100% 25%, 100% 64%, 0 51%); } }
       @media screen and (min-width: 768px) {
         #main-header .main-header #productions {
+          position: absolute;
           border-left: 10px solid black;
           border-right: 15px solid black;
           width: 395px;
@@ -2392,6 +2519,7 @@ footer.fixed-nav {
           left: 204px; } }
       @media screen and (min-width: 993px) {
         #main-header .main-header #productions {
+          position: absolute;
           width: 560px;
           -webkit-transform: skew(-41.25deg);
           -moz-transform: skew(-41.25deg);
@@ -2401,6 +2529,7 @@ footer.fixed-nav {
           left: 290px; } }
       @media screen and (min-width: 1201px) {
         #main-header .main-header #productions {
+          position: absolute;
           width: 660px;
           -webkit-transform: skew(-46deg);
           -moz-transform: skew(-46deg);
@@ -2409,39 +2538,52 @@ footer.fixed-nav {
           transform: skew(-46deg);
           left: 345px; } }
       #main-header .main-header #productions h4.header-text {
-        z-index: 4;
-        top: 250px;
-        left: 130px; }
+        z-index: 4; }
+        @media screen and (max-width: 767px) {
+          #main-header .main-header #productions h4.header-text {
+            text-align: right; } }
         @media screen and (min-width: 768px) {
           #main-header .main-header #productions h4.header-text {
             -webkit-transform: skew(31.8deg);
             -moz-transform: skew(31.8deg);
             -ms-transform: skew(31.8deg);
             -o-transform: skew(31.8deg);
-            transform: skew(31.8deg); } }
+            transform: skew(31.8deg);
+            top: 240px;
+            left: 30px; } }
         @media screen and (min-width: 993px) {
           #main-header .main-header #productions h4.header-text {
             -webkit-transform: skew(41.25deg);
             -moz-transform: skew(41.25deg);
             -ms-transform: skew(41.25deg);
             -o-transform: skew(41.25deg);
-            transform: skew(41.25deg); } }
+            transform: skew(41.25deg);
+            top: 250px;
+            left: 90px; } }
         @media screen and (min-width: 1201px) {
           #main-header .main-header #productions h4.header-text {
             -webkit-transform: skew(46deg);
             -moz-transform: skew(46deg);
             -ms-transform: skew(46deg);
             -o-transform: skew(46deg);
-            transform: skew(46deg); } }
+            transform: skew(46deg);
+            top: 250px;
+            left: 130px; } }
       #main-header .main-header #productions .header-bg-img {
-        width: 200%;
-        height: 100%;
         position: absolute;
         background: url(../images/bg-productions.jpg);
-        /* background-position: center; */
         background-size: cover; }
+        @media screen and (max-width: 767px) {
+          #main-header .main-header #productions .header-bg-img {
+            width: 100%;
+            -webkit-filter: brightness(50%);
+            filter: brightness(50%);
+            top: 170px;
+            height: 40%; } }
         @media screen and (min-width: 768px) {
           #main-header .main-header #productions .header-bg-img {
+            height: 100%;
+            width: 200%;
             top: 0%;
             left: -50%;
             background-position-y: 0px;
@@ -2465,16 +2607,52 @@ footer.fixed-nav {
             -o-transform: skew(46deg);
             transform: skew(46deg); } }
     #main-header .main-header #studio {
-      position: absolute;
-      z-index: 1;
-      right: -90px;
-      background: url(../images/bg-studio.jpg);
-      background-position-x: 60%;
-      width: 60%; }
+      z-index: 1; }
+      @media screen and (max-width: 767px) {
+        #main-header .main-header #studio {
+          position: initial;
+          height: 33.3333333%;
+          overflow: hidden;
+          -webkit-clip-path: polygon(0 53%, 100% 66%, 100% 100%, 0 100%);
+          clip-path: polygon(0 53%, 100% 66%, 100% 100%, 0 100%); } }
+      @media screen and (min-width: 768px) {
+        #main-header .main-header #studio {
+          position: absolute;
+          background: url(../images/bg-studio.jpg);
+          background-position-x: 60%;
+          width: 60%;
+          right: -90px; } }
+      @media screen and (max-width: 767px) {
+        #main-header .main-header #studio .header-bg-img {
+          height: 40%;
+          position: absolute;
+          background: url(../images/bg-studio.jpg);
+          background-size: cover;
+          width: 100%;
+          bottom: 0;
+          -webkit-filter: brightness(50%);
+          filter: brightness(50%); } }
+      @media screen and (min-width: 768px) {
+        #main-header .main-header #studio .header-bg-img {
+          display: none; } }
       #main-header .main-header #studio h4.header-text {
-        z-index: 3;
-        top: 250px;
-        left: 485px; }
+        z-index: 3; }
+        @media screen and (max-width: 767px) {
+          #main-header .main-header #studio h4.header-text {
+            left: 15px;
+            text-align: left; } }
+        @media screen and (min-width: 768px) {
+          #main-header .main-header #studio h4.header-text {
+            top: 360px;
+            left: 190px; } }
+        @media screen and (min-width: 993px) {
+          #main-header .main-header #studio h4.header-text {
+            top: 390px;
+            left: 315px; } }
+        @media screen and (min-width: 1201px) {
+          #main-header .main-header #studio h4.header-text {
+            top: 250px;
+            left: 485px; } }
 
 /* States */
 .is-active {
