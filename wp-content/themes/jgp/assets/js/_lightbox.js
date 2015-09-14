@@ -40,10 +40,10 @@ $(document).ready(function() {
 
 	$close.on('click', function(){
 		$slider.removeClass('is-active');
-		$slider.removeClass('is-active');
+		$slider.addClass('is-inactive');
 		$eventslider.removeClass('is-active');
 		$eventslider.addClass('is-inactive');
-		$sliderClass.addClass('is-inactive');
+		$sliderClass.removeClass('is-active');
 		$sliderClass.addClass('is-inactive');
 	});
 

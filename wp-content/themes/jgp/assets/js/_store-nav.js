@@ -9,6 +9,7 @@ $(document).ready(function() {
 		$ourStoryLink = $('#menu-item-110'),
 		$locationLink = $('#menu-item-112'),
 		$donateLink = $('#menu-item-114'),
+		$mobileNav = $('.nav-mobile'),
 
 		//State Variables
 		$active = $('.is-active'),
@@ -18,7 +19,7 @@ $(document).ready(function() {
 //Click Functions
 
 	$ourStoryLink.on('click', function(){
-		$('.menu').toggleClass('is-active is-inactive');
+		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
 		$subpgHeader.addClass('is-inactive');
 		$location.addClass('is-inactive');
@@ -36,7 +37,7 @@ $(document).ready(function() {
 		$location.removeClass('is-inactive');
 		$location.addClass('is-active');
 		$location.addClass('fade-in');
-		$('.menu').toggleClass('is-active is-inactive');
+		$mobileNav.toggleClass('is-active is-inactive');
 
 	});
 
@@ -48,7 +49,7 @@ $(document).ready(function() {
 		$donate.removeClass('is-inactive');
 		$donate.addClass('is-active');
 		$donate.addClass('fade-in');
-		$('.menu').toggleClass('is-active is-inactive');
+		$mobileNav.toggleClass('is-active is-inactive');
 	});
 
 	$storeIndexLink.on('click', function(){
@@ -59,7 +60,7 @@ $(document).ready(function() {
 		$subpgHeader.removeClass('is-inactive');
 		$subpgHeader.addClass('is-active');
 		$subpgHeader.addClass('fade-in');
-		$('.menu').toggleClass('is-active is-inactive');
+		$mobileNav.toggleClass('is-active is-inactive');
 	});
 
 

@@ -2162,7 +2162,8 @@ nav {
   position: relative;
   color: white;
   text-align: center;
-  padding-right: 15px; }
+  padding-right: 15px;
+  z-index: 5; }
   nav .toggle-menu {
     position: absolute;
     top: 8px;
