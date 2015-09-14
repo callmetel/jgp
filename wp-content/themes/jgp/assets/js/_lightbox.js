@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	var $playLightbox = $('#play-lightbox'),
 	$classLightbox = $('#class-lightbox'),
+	$eventsLightbox = $('#events-lightbox'),
 	$prevPlay = $('#prev-play'),
 	$galleryImage = $('a.play'),
 	$galleryEvent = $('a.event'),
@@ -17,6 +18,7 @@ $(document).ready(function() {
 		
 		$slider.eq($img_val-1).removeClass('is-inactive');
 		$slider.eq($img_val-1).addClass('is-active');
+		location.hash('plays-lightbox');
 
 	});
 
@@ -25,6 +27,7 @@ $(document).ready(function() {
 
 		$eventslider.eq($img_val-1).removeClass('is-inactive');
 		$eventslider.eq($img_val-1).addClass('is-active');
+		location.hash('events-lightbox');
 
 	});
 
@@ -35,6 +38,7 @@ $(document).ready(function() {
 
 		$sliderClass.eq($btn_val-1).removeClass('is-inactive');
 		$sliderClass.eq($btn_val-1).addClass('is-active');
+		location.hash('class-lightbox');
 
 	});
 
