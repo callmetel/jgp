@@ -1,4 +1,6 @@
 #about{
+	height: auto;
+    overflow: hidden;
 	text-align: center;
 	.about-shape-container{
 		padding-bottom:30px;
@@ -24,7 +26,12 @@
 			letter-spacing: -5px;
 		}
 		.about-title{
-			font-size:2.71375rem;
+			@include media($mobile){
+				font-size:2rem;
+			}
+			@include media($rg-min){
+				font-size:2.71375rem;
+			}
 		}
 		.about-text{
 			font-size: 1.25rem;

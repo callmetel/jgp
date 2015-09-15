@@ -21,6 +21,8 @@ $(document).ready(function() {
 
 	$eventsLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$booking.addClass('is-inactive');
 		$contact.addClass('is-inactive');
@@ -32,6 +34,8 @@ $(document).ready(function() {
 
 	$bookingLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$events.addClass('is-inactive');
 		$contact.addClass('is-inactive');
@@ -44,6 +48,8 @@ $(document).ready(function() {
 
 	$contactLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$booking.addClass('is-inactive');
 		$events.addClass('is-inactive');
@@ -55,6 +61,8 @@ $(document).ready(function() {
 
 	$calendarLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$booking.addClass('is-inactive');
 		$events.addClass('is-inactive');
@@ -66,6 +74,8 @@ $(document).ready(function() {
 
 	$studioIndexLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blurOut 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$events.addClass('is-inactive');
 		$booking.addClass('is-inactive');
 		$contact.addClass('is-inactive');
@@ -75,7 +85,7 @@ $(document).ready(function() {
 		$subpgHeader.addClass('fade-in');
 	});
 
-
+$(window).resize(function(){
 	if($(window).width < 767) {
 		$toggleMenu.removeClass('is-inactive'); 
 		$toggleMenu.addClass('is-active');  
@@ -84,5 +94,6 @@ $(document).ready(function() {
 		$toggleMenu.removeClass('is-active'); 
 		$toggleMenu.addClass('is-inactive');
 	}
+});
 
 });

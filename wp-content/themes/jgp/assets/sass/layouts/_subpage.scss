@@ -38,11 +38,6 @@
 			}
 		}
 	}
-	.nav-logo{
-		width:100px;
-		margin-left: 10px;
-
-	}
 
 }
 
@@ -71,10 +66,19 @@ section#about-us, section#plays, section#auditions, section#tickets, section#cla
 	}
 }
 
-#about-us, #plays, #tickets, #classes{
+#about-us, #plays, #auditions, #tickets, #classes{
+	@include media($mobile){
+	height: 88vh;
+    overflow-y: auto;
+	}
 	@include media($rg-min){
 	height: 70vh;
     overflow-y: auto;
 	}
 }
 
+.nav-logo{
+		width:100px;
+		margin-left: 10px;
+		padding-top: 10px;
+	}

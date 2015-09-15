@@ -25,8 +25,9 @@ $(document).ready(function() {
 //Click Functions
 
 	$aboutUsLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$auditions.addClass('is-inactive');
@@ -39,8 +40,9 @@ $(document).ready(function() {
 	});
 
 	$playsLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
 		$auditions.addClass('is-inactive');
@@ -54,8 +56,9 @@ $(document).ready(function() {
 	});
 
 	$auditionsLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
@@ -68,8 +71,9 @@ $(document).ready(function() {
 	});
 
 	$auditionFormLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
@@ -82,8 +86,9 @@ $(document).ready(function() {
 	});
 
 	$ticketsLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
@@ -96,8 +101,9 @@ $(document).ready(function() {
 	});
 
 	$classesLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$aboutUs.addClass('is-inactive');
@@ -109,8 +115,9 @@ $(document).ready(function() {
 	});
 
 	$productionsIndexLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blurOut 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$aboutUs.addClass('is-inactive');
 		$plays.addClass('is-inactive');
 		$auditions.addClass('is-inactive');
@@ -123,6 +130,7 @@ $(document).ready(function() {
 	});
 
 
+$(window).resize(function(){
 	if($(window).width < 767) {
 		$toggleMenu.removeClass('is-inactive'); 
 		$toggleMenu.addClass('is-active');  
@@ -131,5 +139,6 @@ $(document).ready(function() {
 		$toggleMenu.removeClass('is-active'); 
 		$toggleMenu.addClass('is-inactive');
 	}
+});
 
 });

@@ -335,6 +335,10 @@ a, a:hover, button, button:hover, input[type="submit"], input[type="submit"]:hov
   line-height: 3.2675rem;
   padding: 5px 20px;
   text-align: center; }
+  @media screen and (max-width: 767px) {
+    .button, body .gform_wrapper .gform_footer input[type=submit] {
+      margin-left: auto;
+      margin-right: auto; } }
 
 .lightbox-btn {
   color: black !important;
@@ -526,6 +530,15 @@ form .ginput_container {
     padding: 0.5em 0;
     width: 90%;
     color: white; }
+    @media screen and (max-width: 767px) {
+      form .ginput_container textarea,
+      form .ginput_container input[type="color"], form .ginput_container input[type="date"], form .ginput_container input[type="datetime"], form .ginput_container input[type="datetime-local"], form .ginput_container input[type="email"], form .ginput_container input[type="month"], form .ginput_container input[type="number"], form .ginput_container input[type="password"], form .ginput_container input[type="search"], form .ginput_container input[type="tel"], form .ginput_container input[type="text"], form .ginput_container input[type="time"], form .ginput_container input[type="url"], form .ginput_container input[type="week"], form .ginput_container textarea,
+      form .ginput_container select[multiple=multiple] {
+        width: 83%;
+        color: white;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; } }
     form .ginput_container textarea:focus,
     form .ginput_container input[type="color"]:focus, form .ginput_container input[type="date"]:focus, form .ginput_container input[type="datetime"]:focus, form .ginput_container input[type="datetime-local"]:focus, form .ginput_container input[type="email"]:focus, form .ginput_container input[type="month"]:focus, form .ginput_container input[type="number"]:focus, form .ginput_container input[type="password"]:focus, form .ginput_container input[type="search"]:focus, form .ginput_container input[type="tel"]:focus, form .ginput_container input[type="text"]:focus, form .ginput_container input[type="time"]:focus, form .ginput_container input[type="url"]:focus, form .ginput_container input[type="week"]:focus, form .ginput_container textarea:focus,
     form .ginput_container select[multiple=multiple]:focus {
@@ -600,6 +613,8 @@ footer.social-media #icons-wrap a {
     width: 30px; }
 
 #contact-home {
+  height: auto;
+  overflow: hidden;
   margin-top: 0px;
   padding-top: 4.375rem; }
   @media screen and (max-width: 767px) {
@@ -1307,9 +1322,6 @@ a, a:visited {
     @media screen and (min-width: 1011px) {
       .subpage-bg .nav-desktop li {
         padding: 2.5rem; } }
-  .subpage-bg .nav-logo {
-    width: 100px;
-    margin-left: 10px; }
 
 .wrap-subpg {
   margin: 0 auto;
@@ -1331,10 +1343,19 @@ section#about-us, section#plays, section#auditions, section#tickets, section#cla
     section#about-us, section#plays, section#auditions, section#tickets, section#classes {
       width: 100%; } }
 
+@media screen and (max-width: 767px) {
+  #about-us, #plays, #auditions, #tickets, #classes {
+    height: 88vh;
+    overflow-y: auto; } }
 @media screen and (min-width: 768px) {
-  #about-us, #plays, #tickets, #classes {
+  #about-us, #plays, #auditions, #tickets, #classes {
     height: 70vh;
     overflow-y: auto; } }
+
+.nav-logo {
+  width: 100px;
+  margin-left: 10px;
+  padding-top: 10px; }
 
 #our-story, #location, #donate {
   margin-top: 4.375rem; }
@@ -1506,6 +1527,8 @@ section#calendar, section#booking, section#contact {
       border: 4px solid white; }
 
 #about {
+  height: auto;
+  overflow: hidden;
   text-align: center; }
   #about .about-shape-container {
     padding-bottom: 30px;
@@ -1527,8 +1550,12 @@ section#calendar, section#booking, section#contact {
       color: black;
       font-size: 4rem;
       letter-spacing: -5px; }
-    #about .about-shape-container .about-title {
-      font-size: 2.71375rem; }
+    @media screen and (max-width: 767px) {
+      #about .about-shape-container .about-title {
+        font-size: 2rem; } }
+    @media screen and (min-width: 768px) {
+      #about .about-shape-container .about-title {
+        font-size: 2.71375rem; } }
     #about .about-shape-container .about-text {
       font-size: 1.25rem;
       text-align: center;
@@ -2168,7 +2195,7 @@ nav {
     position: absolute;
     top: 8px;
     right: 10px;
-    z-index: 4; }
+    z-index: 7; }
   nav a {
     text-decoration: none;
     display: block;
@@ -2218,6 +2245,25 @@ a.toggle-menu:hover, .nav-mobile a:hover {
   height: 100vh;
   font-size: 2rem;
   padding-top: 3.5rem; }
+
+@media screen and (max-width: 767px) {
+  .home-mobile-nav {
+    display: block;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    width: 100%; }
+    .home-mobile-nav .toggle-menu {
+      top: 4px; }
+    .home-mobile-nav .nav-logo {
+      display: none; }
+    .home-mobile-nav .nav-mobile {
+      width: 105%; } }
+@media screen and (min-width: 768px) {
+  .home-mobile-nav {
+    display: none; } }
 
 .booking-text h1 {
   font-family: "bebas_neuebold"; }
@@ -2329,6 +2375,11 @@ footer.fixed-nav {
       margin-top: -1.6875rem;
       margin-left: -20px; }
 
+@media screen and (max-width: 767px) {
+  #calendar {
+    margin-top: 6rem;
+    width: 90%; } }
+
 .calendar-container table, .calendar-container div, .calendar-container td, .calendar-container tr {
   background: transparent !important; }
 
@@ -2338,18 +2389,31 @@ footer.fixed-nav {
 .list {
   text-align: left;
   height: 100%; }
+  @media screen and (max-width: 767px) {
+    .list {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto; } }
   .list h1 {
     font-family: "bebas_neuebook";
     font-size: 2.6875rem;
     letter-spacing: .1px;
     line-height: 3.75rem; }
+    @media screen and (max-width: 767px) {
+      .list h1 {
+        text-align: center; } }
   .list .ticket-container, .list .class-container {
     width: 100%;
-    height: 130px;
     margin: 0 auto;
     list-style: none;
     border-top: 2px solid white;
     border-bottom: 1px solid white; }
+    @media screen and (max-width: 767px) {
+      .list .ticket-container, .list .class-container {
+        height: auto; } }
+    @media screen and (min-width: 768px) {
+      .list .ticket-container, .list .class-container {
+        height: 130px; } }
     .list .ticket-container .ticket > li span, .list .class-container .ticket > li span {
       font-size: 2.5rem;
       line-height: 3.9rem; }
@@ -2360,12 +2424,20 @@ footer.fixed-nav {
       width: 100%;
       height: 100%; }
       .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
-        display: inline-block;
         margin-left: auto;
         margin-right: auto;
-        vertical-align: middle;
-        height: auto;
-        width: 31.76157%; }
+        height: auto; }
+        @media screen and (max-width: 767px) {
+          .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
+            display: block;
+            width: 90%;
+            text-align: center;
+            margin-top: 30px; } }
+        @media screen and (min-width: 768px) {
+          .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
+            display: inline-block;
+            vertical-align: middle;
+            width: 31.76157%; } }
       .list .ticket-container .ticket li.ticket-info, .list .ticket-container .ticket li.class-info, .list .ticket-container .class li.ticket-info, .list .ticket-container .class li.class-info, .list .class-container .ticket li.ticket-info, .list .class-container .ticket li.class-info, .list .class-container .class li.ticket-info, .list .class-container .class li.class-info {
         margin-left: 20px;
         font-family: "bebas_neuebook";
@@ -2375,6 +2447,12 @@ footer.fixed-nav {
         .list .ticket-container .ticket li.ticket-info span, .list .ticket-container .ticket li.class-info span, .list .ticket-container .class li.ticket-info span, .list .ticket-container .class li.class-info span, .list .class-container .ticket li.ticket-info span, .list .class-container .ticket li.class-info span, .list .class-container .class li.ticket-info span, .list .class-container .class li.class-info span {
           font-family: "League Gothic";
           text-transform: uppercase; }
+      @media screen and (max-width: 767px) {
+        .list .ticket-container .ticket li.ticket-info, .list .ticket-container .class li.ticket-info, .list .class-container .ticket li.ticket-info, .list .class-container .class li.ticket-info {
+          margin-right: 10px; } }
+      @media screen and (max-width: 767px) {
+        .list .ticket-container .ticket li.ticket-price, .list .ticket-container .class li.ticket-price, .list .class-container .ticket li.ticket-price, .list .class-container .class li.ticket-price {
+          width: 29% !important; } }
 
 #main-header {
   position: relative;
@@ -2383,7 +2461,8 @@ footer.fixed-nav {
   @media screen and (max-width: 767px) {
     #main-header {
       height: 100vh;
-      margin-bottom: 25px; } }
+      margin-bottom: 25px;
+      margin-top: 4vh; } }
   @media screen and (min-width: 768px) {
     #main-header {
       height: 650px;

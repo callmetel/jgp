@@ -5,6 +5,7 @@
 	@include media($mobile){
 		height:100vh;
 		margin-bottom:25px;
+		margin-top: 4vh;
 	}
 	@include media($rg-min){
 		height: 650px;

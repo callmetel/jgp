@@ -1,4 +1,9 @@
-
+#calendar{
+	@include media($mobile){
+		margin-top: 6rem;
+		width:90%;
+	}
+}
 .calendar-container{
 	table, div, td, tr{
 		background: transparent!important;

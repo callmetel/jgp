@@ -19,8 +19,9 @@ $(document).ready(function() {
 //Click Functions
 
 	$ourStoryLink.on('click', function(){
-		$mobileNav.toggleClass('is-active is-inactive');
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$location.addClass('is-inactive');
 		$donate.addClass('is-inactive');
@@ -31,39 +32,42 @@ $(document).ready(function() {
 
 	$locationLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$ourStory.addClass('is-inactive');
 		$donate.addClass('is-inactive');
 		$location.removeClass('is-inactive');
 		$location.addClass('is-active');
 		$location.addClass('fade-in');
-		$mobileNav.toggleClass('is-active is-inactive');
 
 	});
 
 	$donateLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blur 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$subpgHeader.addClass('is-inactive');
 		$location.addClass('is-inactive');
 		$ourStory.addClass('is-inactive');
 		$donate.removeClass('is-inactive');
 		$donate.addClass('is-active');
 		$donate.addClass('fade-in');
-		$mobileNav.toggleClass('is-active is-inactive');
 	});
 
 	$storeIndexLink.on('click', function(){
 		$('head').append('<style>.subpage-bg:before{ animation: blurOut 1s linear forwards;}</style>');
+		$('.nav-mobile').addClass('is-inactive');
+		$('.nav-mobile').removeClass('is-active');
 		$ourStory.addClass('is-inactive');
 		$location.addClass('is-inactive');
 		$donate.addClass('is-inactive');
 		$subpgHeader.removeClass('is-inactive');
 		$subpgHeader.addClass('is-active');
 		$subpgHeader.addClass('fade-in');
-		$mobileNav.toggleClass('is-active is-inactive');
 	});
 
-
+$(window).resize(function(){
 	if($(window).width < 767) {
 		$toggleMenu.removeClass('is-inactive'); 
 		$toggleMenu.addClass('is-active');  
@@ -72,5 +76,6 @@ $(document).ready(function() {
 		$toggleMenu.removeClass('is-active'); 
 		$toggleMenu.addClass('is-inactive');
 	}
+});
 
 });
