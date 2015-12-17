@@ -22,10 +22,8 @@ get_header(); ?>
 			<?php include 'partials/studio/booking-form.php'; ?>
 			<?php include 'partials/studio/contact.php'; ?>
 			<?php include 'partials/studio/calendar.php'; ?>
-
+			<?php include 'partials/subpg_studio_footer.php'; ?>
 			
-			<?php include 'partials/subpg_footer.php'; ?>
-			<?php include 'partials/studio/events-lightbox.php'; ?>
 		<?php endwhile;
 	endif;
 	?>

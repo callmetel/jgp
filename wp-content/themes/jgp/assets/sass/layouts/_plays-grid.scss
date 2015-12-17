@@ -7,23 +7,247 @@
 		a:hover{
 			border:none;
 		}
-		li{
-			width:14.0625rem;
-			height:14.0625rem;
-			font-size: 4vw;
-			line-height: 3.75rem;
-  			padding-top: 3.125rem;
-			background-color: black;
-			color:white;
-			cursor: pointer;
-			font-family: $font-bold;
-			display: inline-block;
-			margin:20px;
-			vertical-align: middle;
-			@include transition(all .5s ease-in-out);
-			&:hover{
-				border:4px solid white;
-			}
+	}
+}
+
+li.play-container, li.class-container, li.event-container{
+	background-color: rgba(0,0,0,.65);
+	width: 100%;
+	height: 144px;
+	overflow:hidden;
+	margin-bottom: 5px;
+
+}
+
+ul.class-name-plus, ul.event-name-plus{
+	height:9rem;
+	margin:0;
+	li.class-name, li.event-name{
+		width: 90%;
+		margin-left: 2%;
+		display: inline-block;
+		font-family: $title;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		vertical-align: middle;
+		@include media($rg-min){
+			font-size: 5rem;
+		}
+	}
+	img.plus-sign{
+		width:5%;
+		margin-right:2%;
+		height:auto;
+		display:inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		@include transition(all .45s ease-in-out);
+		@include media($sm-mobile){
+			width:30px;
+		}
+	}
+	img.plus-sign:hover{
+		@include filter(blur(3px));
+		@include transition(all .45s ease-in-out);
+	}
+}
+
+ul.class-info-overview {
+	list-style: none!important;
+	border-top: 10px solid #828282;
+	padding-top: 2.25rem;
+	height:auto;
+	padding-left: 1%;
+	li.class-info{
+		margin-left: 20px;
+		font-family: $font-book;
+		font-size: 1rem;
+		letter-spacing: .1px;
+		line-height: 1.1rem;
+	}
+	li.class-overview {
+		@include media($rg-min){
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include media($rg-min){
+			width: 48%;
+			float: right;
+		}
+		p{
+			width: 90%;
+		}
+	}
+	a.more-info-link{
+		margin-left: 1%;
+	}
+	
+}
+
+
+ul.event-image-dscr {
+	list-style: none!important;
+	border-top: 10px solid #828282;
+	padding-top: 2.25rem;
+	height:auto;
+	padding-left: 1%;
+
+	li.event-image{
+		padding-bottom: 10px;
+		@include media($rg-min){
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include media($rg-min){
+			width: 48%;
+			float: left;
+		}
+		img{
+			width:100%;
+		}
+	}
+
+	li.event-dscr{
+		padding-bottom: 10px;
+		@include media($rg-min){
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include media($rg-min){
+			width: 48%;
+			float: right;
+		}
+		p{
+			width: 90%;
+			margin-left: auto;
+    		margin-right: auto;
+		}
+		a.more-info-link{
+			border: 1px solid white;
 		}
 	}
 }
+
+div.individual-play{
+	ul.play-image-name{
+		height:9rem;
+		margin:0;
+		li.play-image {
+			width: 20%;
+			height: 100%;
+			display: inline-block;
+			margin: 0;
+			text-align: left;
+			margin-left: 0;
+			margin-right: 0!important;
+			vertical-align: middle;
+			
+			@include media($mobile){
+				margin-left: -15px;
+			}
+		}
+		li.play-name {
+			width: 72%;
+			display: inline-block;
+			font-family: $title;
+			text-transform: uppercase;
+			vertical-align: middle;
+			margin-left: -5px;
+			font-size: 3rem;
+
+			@include media($rg-min){
+				font-size: 5rem;
+			}
+		}
+		img.plus-sign{
+			width:5%;
+			margin-right:2%;
+			height:auto;
+			display:inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+			@include transition(all .45s ease-in-out);
+
+			@include media($sm-mobile){
+				width:30px;
+			}
+		}
+		img.plus-sign:hover{
+			@include filter(blur(3px));
+			@include transition(all .45s ease-in-out);
+		}
+	}
+	ul.play-cast-synopsis{
+		list-style: none!important;
+		border-top: 10px solid #828282;
+		padding-top: 2.25rem;
+		height:auto;
+		li.cast-container {
+			@include media($rg-min){
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@include media($rg-min){
+				width: 48%;
+				float: left;
+			}
+			figure.cast-member{
+				width: 40%;
+				display: inline-block;
+				div.cast-image {
+					margin-left: auto;
+					margin-right: auto;
+					@include media($rg-max){
+						width: 120px;
+						height: 120px;
+					}
+					@include media($lg-min){
+						width: 160px;
+						height: 160px;
+					}
+				}
+				figcaption{
+					font-family: $font-regular;
+					font-size:1.2rem;
+					text-align: center;
+					span{
+						font-family: $font-regular;
+						font-size: .75rem;
+					}
+				}
+			}
+		}
+		li.play-synopsis {
+			@include media($rg-min){
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@include media($rg-min){
+				width: 48%;
+				float: right;
+			}
+		}
+
+	}
+	ul.play-video-container{
+		padding-bottom: 20px;
+	}	
+}
+
+h2.none-available{
+	text-align: center;
+	margin-top:2.5rem;
+}
+
+#class-list{
+	h2.none-available{
+		margin-top: 6.25rem!important;
+	}
+}
+
+

@@ -40,54 +40,6 @@ a, a:hover, button, button:hover, input[type="submit"], input[type="submit"]:hov
 
 }
 
-.btn-secondary{
-	border: 3px solid $blue;
-	line-height: 57px;
-
-	color: $blue;
-
-	&:hover{
-		color: $blue;
-	}
-
-	&.white{
-		border-color: $white;
-		color: $grey;
-
-		&:hover{
-			color: $grey;
-		}
-	}
-	&.small{
-		line-height: 50px;
-	}
-}
-
-.btn-primary{
-	line-height: 60px;
-	color: $white;
-	border: 0;
-
-	&:hover, &:active, &:focus, &:visited{
-		color: $white;
-	}
-
-
-	&.pink{
-		background-color: $pink1;
-		&:hover{
-			background-color: $pink4;
-		}
-	}
-
-	&.blue{
-		background-color: $blue1;
-		&:hover{
-			background-color: $blue4;
-		}
-	}
-}
-
 .big-button{
 	width:350px!important;
 	font-size: 45px!important;

@@ -2,6 +2,8 @@
 	#map-canvas{
 		top:60px;
 		left:50px;
+		background-image: url('../images/jgp-map.jpg');
+		background-size: cover;
 
 		@include media($md-screen){
 			width:15.625rem;

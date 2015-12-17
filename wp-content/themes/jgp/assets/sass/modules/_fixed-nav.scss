@@ -41,7 +41,8 @@ footer.fixed-nav{
             vertical-align: middle;
             a{
                 @include media($rg-max){
-                    font-size: 1.3rem!important;
+                    font-size: 1.35rem;
+                     padding: 0 !important;
                 }
             }
             @include media($rg-min){
@@ -61,4 +62,7 @@ footer.fixed-nav{
 .fixed-bottom {
     position: fixed;
     bottom: 0;
+}
+#menu-main-nav-1{
+    margin-top:20px;
 }

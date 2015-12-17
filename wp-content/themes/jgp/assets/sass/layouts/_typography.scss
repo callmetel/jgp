@@ -101,6 +101,12 @@ p{
   font-size: 1.5rem;
   line-height: 3.5rem;
   letter-spacing: .1rem;
+  font-family: $font-regular;
+  
+}
+#calendar span{
+  font-family: $font-regular;
+  
 }
 #our-story p, #donate p, #about-us p{
   @include media($mobile){

@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php include 'partials/store/our-story.php'; ?>
 			<?php include 'partials/store/location.php'; ?>
 			<?php include 'partials/store/donate.php'; ?>
-			<?php include 'partials/subpg_footer.php'; ?>
+			<?php include 'partials/subpg_store_footer.php'; ?>
 
 		<?php endwhile;
 	endif;

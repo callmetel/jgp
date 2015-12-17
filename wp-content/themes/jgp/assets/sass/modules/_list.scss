@@ -16,7 +16,7 @@
 		}
 	}
 
-	.ticket-container, .class-container{
+	.ticket-container{
 		width:100%;
 		margin:0 auto;
 		list-style: none;
@@ -34,13 +34,7 @@
 				line-height: 3.9rem;
 			}
 		}
-		.class>li{
-			span{
-				font-size: 1.5rem;
-				line-height: 3.9rem;
-			}
-		}	
-		.ticket, .class{
+		.ticket{
 			width:100%;
 			height:100%;
 			li{
@@ -59,7 +53,7 @@
 					width: 31.76157%;
 				}
 			}
-			li.ticket-info, li.class-info{
+			li.ticket-info{
 				margin-left: 20px;
 				font-family: $font-book;
 				font-size: 1rem;
@@ -76,6 +70,7 @@
 				}
 			}
 			li.ticket-price{
+				font-family: $font-regular;
 				@include media($mobile){
 					width: 29%!important;
 				}

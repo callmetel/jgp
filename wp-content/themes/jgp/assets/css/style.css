@@ -55,8 +55,7 @@ h5,
 h6 {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   line-height: 1.25;
-  margin: 0;
-  text-rendering: optimizeLegibility; }
+  margin: 0; }
 
 h1 {
   font-size: 2.25em; }
@@ -284,35 +283,6 @@ a, a:hover, button, button:hover, input[type="submit"], input[type="submit"]:hov
   text-transform: uppercase;
   width: 285px; }
 
-.btn-secondary {
-  border: 3px solid #477DCA;
-  line-height: 57px;
-  color: #477DCA; }
-  .btn-secondary:hover {
-    color: #477DCA; }
-  .btn-secondary.white {
-    border-color: #fff;
-    color: #e4e4e4; }
-    .btn-secondary.white:hover {
-      color: #e4e4e4; }
-  .btn-secondary.small {
-    line-height: 50px; }
-
-.btn-primary {
-  line-height: 60px;
-  color: #fff;
-  border: 0; }
-  .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited {
-    color: #fff; }
-  .btn-primary.pink {
-    background-color: #f1658c; }
-    .btn-primary.pink:hover {
-      background-color: #f9c1d1; }
-  .btn-primary.blue {
-    background-color: #0c283f; }
-    .btn-primary.blue:hover {
-      background-color: #9ea9b2; }
-
 .big-button {
   width: 350px !important;
   font-size: 45px !important;
@@ -411,10 +381,10 @@ a.lightbox-close, #play-lightbox:target a.lightbox-close, #class-lightbox:target
 /* Regular */
 @font-face {
   font-family: 'League Gothic';
-  src: url("../fonts/leaguegothic-italic-webfont.eot");
-  src: url("../fonts/leaguegothic-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguegothic-italic-webfont.woff") format("woff"), url("../fonts/leaguegothic-italic-webfont.ttf") format("truetype"), url("../fonts/leaguegothic-italic-webfont.svg#league_gothic_italicregular") format("svg");
+  src: url("../fonts/leaguegothic-regular-webfont.eot");
+  src: url("../fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguegothic-regular-webfont.woff") format("woff"), url("../fonts/leaguegothic-regular-webfont.ttf") format("truetype"), url("../fonts/leaguegothic-regular-webfont.svg#league_gothicregular") format("svg");
   font-weight: normal;
-  font-style: italic; }
+  font-style: normal; }
 @font-face {
   font-family: 'bebas_neuebold';
   src: url("../fonts/bebasneue_bold-webfont.eot");
@@ -445,48 +415,6 @@ a.lightbox-close, #play-lightbox:target a.lightbox-close, #class-lightbox:target
   src: url("../fonts/bebasneue_thin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_thin-webfont.woff2") format("woff2"), url("../fonts/bebasneue_thin-webfont.woff") format("woff"), url("../fonts/bebasneue_thin-webfont.ttf") format("truetype"), url("../fonts/bebasneue_thin-webfont.svg#bebas_neuethin") format("svg");
   font-weight: normal;
   font-style: normal; }
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-arrow-next:before {
-  content: "\e608"; }
-
-.icon-arrow-prev:before {
-  content: "\e609"; }
-
-.icon-arrow-right:before {
-  content: "\e605"; }
-
-.icon-arrow-left:before {
-  content: "\e606"; }
-
-.icon-arrow-down:before {
-  content: "\e607"; }
-
-.icon-facebook:before {
-  content: "\e600"; }
-
-.icon-linkedin:before {
-  content: "\e601"; }
-
-.icon-moxie:before {
-  content: "\e602"; }
-
-.icon-logo:before {
-  content: "\e603"; }
-
-.icon-twitter:before {
-  content: "\e604"; }
-
 form ul {
   list-style: none;
   padding-left: 0px; }
@@ -1209,7 +1137,11 @@ h6 {
 p {
   font-size: 1.5rem;
   line-height: 3.5rem;
-  letter-spacing: .1rem; }
+  letter-spacing: .1rem;
+  font-family: "bebas_neue_regularregular"; }
+
+#calendar span {
+  font-family: "bebas_neue_regularregular"; }
 
 @media screen and (max-width: 767px) {
   #our-story p, #donate p, #about-us p {
@@ -1477,24 +1409,209 @@ section#calendar, section#booking, section#contact {
   list-style: none; }
   #plays .plays-grid a:hover {
     border: none; }
-  #plays .plays-grid li {
-    width: 14.0625rem;
-    height: 14.0625rem;
-    font-size: 4vw;
-    line-height: 3.75rem;
-    padding-top: 3.125rem;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    font-family: "bebas_neuebold";
+
+li.play-container, li.class-container, li.event-container {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 144px;
+  overflow: hidden;
+  margin-bottom: 5px; }
+
+ul.class-name-plus, ul.event-name-plus {
+  height: 9rem;
+  margin: 0; }
+  ul.class-name-plus li.class-name, ul.class-name-plus li.event-name, ul.event-name-plus li.class-name, ul.event-name-plus li.event-name {
+    width: 90%;
+    margin-left: 2%;
     display: inline-block;
-    margin: 20px;
+    font-family: "League Gothic";
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    vertical-align: middle; }
+    @media screen and (min-width: 768px) {
+      ul.class-name-plus li.class-name, ul.class-name-plus li.event-name, ul.event-name-plus li.class-name, ul.event-name-plus li.event-name {
+        font-size: 5rem; } }
+  ul.class-name-plus img.plus-sign, ul.event-name-plus img.plus-sign {
+    width: 5%;
+    margin-right: 2%;
+    height: auto;
+    display: inline-block;
     vertical-align: middle;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
-    #plays .plays-grid li:hover {
-      border: 4px solid white; }
+    cursor: pointer;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out; }
+    @media screen and (max-width: 600px) {
+      ul.class-name-plus img.plus-sign, ul.event-name-plus img.plus-sign {
+        width: 30px; } }
+  ul.class-name-plus img.plus-sign:hover, ul.event-name-plus img.plus-sign:hover {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out; }
+
+ul.class-info-overview {
+  list-style: none !important;
+  border-top: 10px solid #828282;
+  padding-top: 2.25rem;
+  height: auto;
+  padding-left: 1%; }
+  ul.class-info-overview li.class-info {
+    margin-left: 20px;
+    font-family: "bebas_neuebook";
+    font-size: 1rem;
+    letter-spacing: .1px;
+    line-height: 1.1rem; }
+  @media screen and (min-width: 768px) {
+    ul.class-info-overview li.class-overview {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media screen and (min-width: 768px) {
+    ul.class-info-overview li.class-overview {
+      width: 48%;
+      float: right; } }
+  ul.class-info-overview li.class-overview p {
+    width: 90%; }
+  ul.class-info-overview a.more-info-link {
+    margin-left: 1%; }
+
+ul.event-image-dscr {
+  list-style: none !important;
+  border-top: 10px solid #828282;
+  padding-top: 2.25rem;
+  height: auto;
+  padding-left: 1%; }
+  ul.event-image-dscr li.event-image {
+    padding-bottom: 10px; }
+    @media screen and (min-width: 768px) {
+      ul.event-image-dscr li.event-image {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto; } }
+    @media screen and (min-width: 768px) {
+      ul.event-image-dscr li.event-image {
+        width: 48%;
+        float: left; } }
+    ul.event-image-dscr li.event-image img {
+      width: 100%; }
+  ul.event-image-dscr li.event-dscr {
+    padding-bottom: 10px; }
+    @media screen and (min-width: 768px) {
+      ul.event-image-dscr li.event-dscr {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto; } }
+    @media screen and (min-width: 768px) {
+      ul.event-image-dscr li.event-dscr {
+        width: 48%;
+        float: right; } }
+    ul.event-image-dscr li.event-dscr p {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto; }
+    ul.event-image-dscr li.event-dscr a.more-info-link {
+      border: 1px solid white; }
+
+div.individual-play ul.play-image-name {
+  height: 9rem;
+  margin: 0; }
+  div.individual-play ul.play-image-name li.play-image {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0 !important;
+    vertical-align: middle; }
+    @media screen and (max-width: 767px) {
+      div.individual-play ul.play-image-name li.play-image {
+        margin-left: -15px; } }
+  div.individual-play ul.play-image-name li.play-name {
+    width: 72%;
+    display: inline-block;
+    font-family: "League Gothic";
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: -5px;
+    font-size: 3rem; }
+    @media screen and (min-width: 768px) {
+      div.individual-play ul.play-image-name li.play-name {
+        font-size: 5rem; } }
+  div.individual-play ul.play-image-name img.plus-sign {
+    width: 5%;
+    margin-right: 2%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out; }
+    @media screen and (max-width: 600px) {
+      div.individual-play ul.play-image-name img.plus-sign {
+        width: 30px; } }
+  div.individual-play ul.play-image-name img.plus-sign:hover {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out; }
+div.individual-play ul.play-cast-synopsis {
+  list-style: none !important;
+  border-top: 10px solid #828282;
+  padding-top: 2.25rem;
+  height: auto; }
+  @media screen and (min-width: 768px) {
+    div.individual-play ul.play-cast-synopsis li.cast-container {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media screen and (min-width: 768px) {
+    div.individual-play ul.play-cast-synopsis li.cast-container {
+      width: 48%;
+      float: left; } }
+  div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member {
+    width: 40%;
+    display: inline-block; }
+    div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member div.cast-image {
+      margin-left: auto;
+      margin-right: auto; }
+      @media screen and (max-width: 992px) {
+        div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member div.cast-image {
+          width: 120px;
+          height: 120px; } }
+      @media screen and (min-width: 993px) {
+        div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member div.cast-image {
+          width: 160px;
+          height: 160px; } }
+    div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member figcaption {
+      font-family: "bebas_neue_regularregular";
+      font-size: 1.2rem;
+      text-align: center; }
+      div.individual-play ul.play-cast-synopsis li.cast-container figure.cast-member figcaption span {
+        font-family: "bebas_neue_regularregular";
+        font-size: .75rem; }
+  @media screen and (min-width: 768px) {
+    div.individual-play ul.play-cast-synopsis li.play-synopsis {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media screen and (min-width: 768px) {
+    div.individual-play ul.play-cast-synopsis li.play-synopsis {
+      width: 48%;
+      float: right; } }
+div.individual-play ul.play-video-container {
+  padding-bottom: 20px; }
+
+h2.none-available {
+  text-align: center;
+  margin-top: 2.5rem; }
+
+#class-list h2.none-available {
+  margin-top: 6.25rem !important; }
 
 @media screen and (min-width: 768px) {
   #events {
@@ -1562,10 +1679,10 @@ section#calendar, section#booking, section#contact {
       margin: 0 auto; }
       @media screen and (max-width: 767px) {
         #about .about-shape-container .about-text {
-          width: 90%; } }
+          width: 90% !important; } }
       @media screen and (min-width: 768px) {
         #about .about-shape-container .about-text {
-          width: 50%; } }
+          width: 50% !important; } }
 
 /* Mixins */
 @-webkit-keyframes pulse-animation {
@@ -2173,7 +2290,9 @@ input[type="submit"] {
 
 .google-map #map-canvas {
   top: 60px;
-  left: 50px; }
+  left: 50px;
+  background-image: url("../images/jgp-map.jpg");
+  background-size: cover; }
   @media screen and (min-width: 768px) {
     .google-map #map-canvas {
       width: 15.625rem;
@@ -2323,7 +2442,8 @@ footer.fixed-nav {
       vertical-align: middle; }
       @media screen and (max-width: 992px) {
         footer.fixed-nav .nav-desktop li a {
-          font-size: 1.3rem !important; } }
+          font-size: 1.35rem;
+          padding: 0 !important; } }
       @media screen and (min-width: 768px) {
         footer.fixed-nav .nav-desktop li {
           padding-left: 10px;
@@ -2339,6 +2459,9 @@ footer.fixed-nav {
 .fixed-bottom {
   position: fixed;
   bottom: 0; }
+
+#menu-main-nav-1 {
+  margin-top: 20px; }
 
 #contact-home #icons-container {
   width: 11.25rem;
@@ -2402,57 +2525,56 @@ footer.fixed-nav {
     @media screen and (max-width: 767px) {
       .list h1 {
         text-align: center; } }
-  .list .ticket-container, .list .class-container {
+  .list .ticket-container {
     width: 100%;
     margin: 0 auto;
     list-style: none;
     border-top: 2px solid white;
     border-bottom: 1px solid white; }
     @media screen and (max-width: 767px) {
-      .list .ticket-container, .list .class-container {
+      .list .ticket-container {
         height: auto; } }
     @media screen and (min-width: 768px) {
-      .list .ticket-container, .list .class-container {
+      .list .ticket-container {
         height: 130px; } }
-    .list .ticket-container .ticket > li span, .list .class-container .ticket > li span {
+    .list .ticket-container .ticket > li span {
       font-size: 2.5rem;
       line-height: 3.9rem; }
-    .list .ticket-container .class > li span, .list .class-container .class > li span {
-      font-size: 1.5rem;
-      line-height: 3.9rem; }
-    .list .ticket-container .ticket, .list .ticket-container .class, .list .class-container .ticket, .list .class-container .class {
+    .list .ticket-container .ticket {
       width: 100%;
       height: 100%; }
-      .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
+      .list .ticket-container .ticket li {
         margin-left: auto;
         margin-right: auto;
         height: auto; }
         @media screen and (max-width: 767px) {
-          .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
+          .list .ticket-container .ticket li {
             display: block;
             width: 90%;
             text-align: center;
             margin-top: 30px; } }
         @media screen and (min-width: 768px) {
-          .list .ticket-container .ticket li, .list .ticket-container .class li, .list .class-container .ticket li, .list .class-container .class li {
+          .list .ticket-container .ticket li {
             display: inline-block;
             vertical-align: middle;
             width: 31.76157%; } }
-      .list .ticket-container .ticket li.ticket-info, .list .ticket-container .ticket li.class-info, .list .ticket-container .class li.ticket-info, .list .ticket-container .class li.class-info, .list .class-container .ticket li.ticket-info, .list .class-container .ticket li.class-info, .list .class-container .class li.ticket-info, .list .class-container .class li.class-info {
+      .list .ticket-container .ticket li.ticket-info {
         margin-left: 20px;
         font-family: "bebas_neuebook";
         font-size: 1rem;
         letter-spacing: .1px;
         line-height: 1.1rem; }
-        .list .ticket-container .ticket li.ticket-info span, .list .ticket-container .ticket li.class-info span, .list .ticket-container .class li.ticket-info span, .list .ticket-container .class li.class-info span, .list .class-container .ticket li.ticket-info span, .list .class-container .ticket li.class-info span, .list .class-container .class li.ticket-info span, .list .class-container .class li.class-info span {
+        .list .ticket-container .ticket li.ticket-info span {
           font-family: "League Gothic";
           text-transform: uppercase; }
       @media screen and (max-width: 767px) {
-        .list .ticket-container .ticket li.ticket-info, .list .ticket-container .class li.ticket-info, .list .class-container .ticket li.ticket-info, .list .class-container .class li.ticket-info {
+        .list .ticket-container .ticket li.ticket-info {
           margin-right: 10px; } }
-      @media screen and (max-width: 767px) {
-        .list .ticket-container .ticket li.ticket-price, .list .ticket-container .class li.ticket-price, .list .class-container .ticket li.ticket-price, .list .class-container .class li.ticket-price {
-          width: 29% !important; } }
+      .list .ticket-container .ticket li.ticket-price {
+        font-family: "bebas_neue_regularregular"; }
+        @media screen and (max-width: 767px) {
+          .list .ticket-container .ticket li.ticket-price {
+            width: 29% !important; } }
 
 #main-header {
   position: relative;
@@ -2549,7 +2671,7 @@ footer.fixed-nav {
           border-left: 560px solid transparent; } }
       @media screen and (min-width: 1201px) {
         #main-header .main-header #store {
-          border-left: 660px solid transparent; } }
+          border-left: 672px solid transparent; } }
       @media screen and (max-width: 767px) {
         #main-header .main-header #store .header-bg-img {
           height: 33%;

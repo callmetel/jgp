@@ -15,41 +15,50 @@ function jgp_script_enqueue() {
 add_action( 'wp_enqueue_scripts' , 'jgp_script_enqueue');
 
 // Let's hook in our function with the javascript files with the wp_enqueue_scripts hook 
+
 // Register some javascript files, because we love javascript files. Enqueue a couple as well 
 function jgp_load_javascript_files() {
   wp_register_script( 'store_nav', get_template_directory_uri() . '/assets/js/_store-nav.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'productions_nav', get_template_directory_uri() . '/assets/js/_productions-nav.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'studio_nav', get_template_directory_uri() . '/assets/js/_studio-nav.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'lightbox', get_template_directory_uri() . '/assets/js/_lightbox.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'toggle', get_template_directory_uri() . '/assets/js/_toggle.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'carousel', get_template_directory_uri() . '/assets/js/_carousel.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'map', get_template_directory_uri() . '/assets/js/map.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'studioMap', get_template_directory_uri() . '/assets/js/studio-map.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'global_script', get_template_directory_uri() . '/assets/js/_script.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'greensock', get_template_directory_uri() . '/assets/js/TweenLite.min.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'start_animation', get_template_directory_uri() . '/assets/js/_startAnimation.js', array('jquery'), '1.0.0', true );
 
 
   if ( is_page( 'JGP Home' ) ) {
-    wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
+      wp_enqueue_script('sub_menus');
      wp_enqueue_script('global_script');
+     wp_enqueue_script('greensock');
+     
   }
 
   if ( is_page( 2 ) ) {
     wp_enqueue_script('global_script');
     wp_enqueue_script('store_nav', get_template_directory_uri() . '/assets/js/_store-nav.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'map' );
   }
 
   if ( is_page( 'Productions' ) ) {
     wp_enqueue_script('global_script');
     wp_enqueue_script('productions_nav');
-    wp_enqueue_script('lightbox');
+    wp_enqueue_script('toggle');
     wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
   }
 
   if ( is_page( 'JGPStudio' ) ) {
     wp_enqueue_script('global_script');
-    wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('studio_nav');
-    wp_enqueue_script('lightbox');
+    wp_enqueue_script('toggle');
+    wp_enqueue_script('sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
+    wp_register_script( 'studioMap', get_template_directory_uri() . '/assets/js/studio-map.js', array('jquery'), '1.0.0', true );
   }
 }
 add_action( 'wp_enqueue_scripts', 'jgp_load_javascript_files' );
@@ -338,7 +347,7 @@ acf_add_local_field_group(array (
       'min' => '',
       'max' => '',
       'layout' => 'row',
-      'button_label' => 'Add Class',
+      'button_label' => 'Add A Class',
       'sub_fields' => array (
         array (
           'key' => 'field_55ddeb6707ece',
@@ -346,7 +355,7 @@ acf_add_local_field_group(array (
           'name' => 'class_name',
           'type' => 'text',
           'instructions' => '',
-          'required' => 0,
+          'required' => 1,
           'conditional_logic' => 0,
           'wrapper' => array (
             'width' => '',
@@ -488,6 +497,41 @@ acf_add_local_field_group(array (
           'readonly' => 0,
           'disabled' => 0,
         ),
+        array (
+          'key' => 'field_5672f75d158ee',
+          'label' => 'Register Url',
+          'name' => 'register_url',
+          'type' => 'url',
+          'instructions' => 'Enter the Link to Register for the Specific Class.',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+        ),
+        array (
+          'key' => 'field_5672f79e158ef',
+          'label' => 'Class Overview',
+          'name' => 'class_overview',
+          'type' => 'wysiwyg',
+          'instructions' => 'Add A Short Description/Overview of the Class. 
+***PLEASE DO NOT USE ANY OF THE FORMATTING TOOLS*** ',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'tabs' => 'visual',
+          'toolbar' => 'very_simple',
+          'media_upload' => 0,
+        ),
       ),
     ),
   ),
@@ -512,13 +556,13 @@ acf_add_local_field_group(array (
 
 acf_add_local_field_group(array (
   'key' => 'group_55de4c860092f',
-  'title' => 'Events Gallery',
+  'title' => 'Events Repeater',
   'fields' => array (
     array (
       'key' => 'field_55de4c8603cfb',
-      'label' => 'Events Gallery',
-      'name' => 'events_gallery',
-      'type' => 'gallery',
+      'label' => 'Events',
+      'name' => 'events_repeater',
+      'type' => 'repeater',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
@@ -527,17 +571,91 @@ acf_add_local_field_group(array (
         'class' => '',
         'id' => '',
       ),
-      'min' => 3,
+      'min' => '',
       'max' => '',
-      'preview_size' => 'medium',
-      'library' => 'all',
-      'min_width' => '',
-      'min_height' => '',
-      'min_size' => '',
-      'max_width' => '',
-      'max_height' => '',
-      'max_size' => '',
-      'mime_types' => 'svg, jpg',
+      'layout' => 'row',
+      'button_label' => 'Add An Event',
+      'sub_fields' => array (
+        array (
+          'key' => 'field_567305dcaae35',
+          'label' => 'Event Name',
+          'name' => 'event_name',
+          'type' => 'text',
+          'instructions' => 'Enter the Name of the Event Here.',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_567305faaae36',
+          'label' => 'Event Image',
+          'name' => 'event_image',
+          'type' => 'image',
+          'instructions' => 'Enter the Event Image Here.',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'return_format' => 'url',
+          'preview_size' => 'thumbnail',
+          'library' => 'all',
+          'min_width' => '',
+          'min_height' => '',
+          'min_size' => '',
+          'max_width' => '',
+          'max_height' => '',
+          'max_size' => '',
+          'mime_types' => '',
+        ),
+        array (
+          'key' => 'field_5673063faae37',
+          'label' => 'Event Description',
+          'name' => 'event_description',
+          'type' => 'wysiwyg',
+          'instructions' => 'Enter the Description of the Event Here. Just a Couple of Sentences Describing the Event.',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'tabs' => 'visual',
+          'toolbar' => 'very_simple',
+          'media_upload' => 0,
+        ),
+        array (
+          'key' => 'field_56730f261fa49',
+          'label' => 'Event Ticket Link',
+          'name' => 'event_url',
+          'type' => 'url',
+          'instructions' => 'Add a Link For the Event',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'http://jgp.tickeleap.com',
+          'placeholder' => '',
+        ),
+      ),
     ),
   ),
   'location' => array (
@@ -599,74 +717,6 @@ acf_add_local_field_group(array (
     0 => 'comments',
     1 => 'author',
   ),
-  'active' => 1,
-  'description' => '',
-));
-
-acf_add_local_field_group(array (
-  'key' => 'group_55ddefe8d685c',
-  'title' => 'Individual Class Info',
-  'fields' => array (
-    array (
-      'key' => 'field_55ddf004543ba',
-      'label' => 'Class Info',
-      'name' => 'class_info',
-      'type' => 'repeater',
-      'instructions' => '',
-      'required' => 1,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'min' => '',
-      'max' => '',
-      'layout' => 'row',
-      'button_label' => 'Add Class Image & Description',
-      'sub_fields' => array (
-        array (
-          'key' => 'field_55ddf095543bb',
-          'label' => 'Class Image',
-          'name' => 'class_image',
-          'type' => 'image',
-          'instructions' => 'Add description of class in image description box and a Link to Register in the caption box',
-          'required' => 0,
-          'conditional_logic' => 0,
-          'wrapper' => array (
-            'width' => '',
-            'class' => '',
-            'id' => '',
-          ),
-          'return_format' => 'array',
-          'preview_size' => 'full',
-          'library' => 'all',
-          'min_width' => '',
-          'min_height' => '',
-          'min_size' => '',
-          'max_width' => '',
-          'max_height' => '',
-          'max_size' => '',
-          'mime_types' => '',
-        ),
-      ),
-    ),
-  ),
-  'location' => array (
-    array (
-      array (
-        'param' => 'page',
-        'operator' => '==',
-        'value' => '77',
-      ),
-    ),
-  ),
-  'menu_order' => 0,
-  'position' => 'normal',
-  'style' => 'default',
-  'label_placement' => 'top',
-  'instruction_placement' => 'label',
-  'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
 ));
@@ -858,33 +908,213 @@ acf_add_local_field_group(array (
 ));
 
 acf_add_local_field_group(array (
-  'key' => 'group_55d9fad65f541',
-  'title' => 'Plays Gallery',
+  'key' => 'group_567111a2a4250',
+  'title' => 'Plays Descriptions Repeater',
   'fields' => array (
     array (
-      'key' => 'field_55d9fadb3923d',
-      'label' => 'Play Gallery',
-      'name' => 'play_gallery',
-      'type' => 'gallery',
+      'key' => 'field_567111a2a95f4',
+      'label' => 'Play Descriptions',
+      'name' => 'new_play',
+      'type' => 'repeater',
       'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => array (
         'width' => '',
-        'class' => 'plays-grid',
+        'class' => '',
         'id' => '',
       ),
-      'min' => 6,
+      'min' => '',
       'max' => '',
-      'preview_size' => 'thumbnail',
-      'library' => 'all',
-      'min_width' => 225,
-      'min_height' => 225,
-      'min_size' => '',
-      'max_width' => '',
-      'max_height' => '',
-      'max_size' => '',
-      'mime_types' => 'svg, jpg',
+      'layout' => 'block',
+      'button_label' => 'Add A Play',
+      'sub_fields' => array (
+        array (
+          'key' => 'field_567111a2aae36',
+          'label' => 'Play Image',
+          'name' => 'play_image',
+          'type' => 'image',
+          'instructions' => '',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'return_format' => 'array',
+          'preview_size' => 'thumbnail',
+          'library' => 'all',
+          'min_width' => '',
+          'min_height' => '',
+          'min_size' => '',
+          'max_width' => '',
+          'max_height' => '',
+          'max_size' => '',
+          'mime_types' => '',
+        ),
+        array (
+          'key' => 'field_567111a2aae1d',
+          'label' => 'Play Name',
+          'name' => 'play_name',
+          'type' => 'text',
+          'instructions' => '',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Play Name',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'readonly' => 0,
+          'disabled' => 0,
+        ),
+        array (
+          'key' => 'field_567111a2aae73',
+          'label' => 'Cast',
+          'name' => 'cast',
+          'type' => 'repeater',
+          'instructions' => 'Each Cast Member has an Image, Character Name, and Actor/Actress Name.',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'min' => '',
+          'max' => '',
+          'layout' => 'table',
+          'button_label' => 'Add A Cast Member',
+          'sub_fields' => array (
+            array (
+              'key' => 'field_567112d3147cf',
+              'label' => 'Actor/Actress Image',
+              'name' => 'actoractress_image',
+              'type' => 'image',
+              'instructions' => '',
+              'required' => 1,
+              'conditional_logic' => 0,
+              'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'return_format' => 'array',
+              'preview_size' => 'thumbnail',
+              'library' => 'all',
+              'min_width' => '',
+              'min_height' => '',
+              'min_size' => '',
+              'max_width' => '',
+              'max_height' => '',
+              'max_size' => '',
+              'mime_types' => '',
+            ),
+            array (
+              'key' => 'field_5671130a147d0',
+              'label' => 'Actor/Actress Name',
+              'name' => 'actoractress_name',
+              'type' => 'text',
+              'instructions' => '',
+              'required' => 1,
+              'conditional_logic' => 0,
+              'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'placeholder' => '',
+              'prepend' => '',
+              'append' => '',
+              'maxlength' => '',
+              'readonly' => 0,
+              'disabled' => 0,
+            ),
+            array (
+              'key' => 'field_5671132f147d1',
+              'label' => 'Character Name',
+              'name' => 'character_name',
+              'type' => 'text',
+              'instructions' => '',
+              'required' => 1,
+              'conditional_logic' => 0,
+              'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'placeholder' => '',
+              'prepend' => '',
+              'append' => '',
+              'maxlength' => '',
+              'readonly' => 0,
+              'disabled' => 0,
+            ),
+          ),
+        ),
+        array (
+          'key' => 'field_567111a2aae89',
+          'label' => 'Play Synopsis',
+          'name' => 'play_synopsis',
+          'type' => 'wysiwyg',
+          'instructions' => 'Write a Synopsis (small paragraph) About the Play Here.',
+          'required' => 1,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'tabs' => 'visual',
+          'toolbar' => 'very_simple',
+          'media_upload' => 0,
+        ),
+        array (
+          'key' => 'field_567111a2aaec5',
+          'label' => 'Video Snippet Gallery',
+          'name' => 'video_gallery',
+          'type' => 'repeater',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'min' => '',
+          'max' => '',
+          'layout' => 'table',
+          'button_label' => 'Add A Video',
+          'sub_fields' => array (
+            array (
+              'key' => 'field_56711535147d2',
+              'label' => 'Play Video',
+              'name' => 'play_video',
+              'type' => 'oembed',
+              'instructions' => 'Add All the Videos Related to the Play by entering the Url for Each Here.',
+              'required' => 0,
+              'conditional_logic' => 0,
+              'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'width' => '',
+              'height' => '',
+            ),
+          ),
+        ),
+      ),
     ),
   ),
   'location' => array (
@@ -893,6 +1123,92 @@ acf_add_local_field_group(array (
         'param' => 'page',
         'operator' => '==',
         'value' => '77',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'seamless',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_5671a4ba00f35',
+  'title' => 'Social Media URLs',
+  'fields' => array (
+    array (
+      'key' => 'field_5671a4d718418',
+      'label' => 'Instagram',
+      'name' => 'instagram',
+      'type' => 'url',
+      'instructions' => 'Paste Instagram Link Here',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'http://instagram.com',
+      'placeholder' => '',
+    ),
+    array (
+      'key' => 'field_5671a50418419',
+      'label' => 'Twitter',
+      'name' => 'twitter',
+      'type' => 'url',
+      'instructions' => 'Paste Twitter Link Here',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'http://twitter.com',
+      'placeholder' => '',
+    ),
+    array (
+      'key' => 'field_5671a5401841a',
+      'label' => 'Facebook',
+      'name' => 'facebook',
+      'type' => 'url',
+      'instructions' => 'Paste Facebook Link Here',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'http://facebook.com',
+      'placeholder' => '',
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '2',
+      ),
+    ),
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '77',
+      ),
+    ),
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '88',
       ),
     ),
   ),
@@ -1146,6 +1462,84 @@ acf_add_local_field_group(array (
   'label_placement' => 'top',
   'instruction_placement' => 'label',
   'hide_on_screen' => '',
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array (
+  'key' => 'group_56710a963a0a6',
+  'title' => 'JGP Location Info',
+  'fields' => array (
+    array (
+      'key' => 'field_56710a963e9e5',
+      'label' => 'Map',
+      'name' => 'studio_map',
+      'type' => 'google_map',
+      'instructions' => '',
+      'required' => 1,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'center_lat' => '39.943302',
+      'center_lng' => '-75.162258',
+      'zoom' => 14,
+      'height' => '',
+    ),
+    array (
+      'key' => 'field_56710a963e9fc',
+      'label' => 'Street Address',
+      'name' => 'studio_street_address',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '1214 South St',
+      'placeholder' => '',
+    ),
+    array (
+      'key' => 'field_56710a963ea0e',
+      'label' => 'City State Zip',
+      'name' => 'studio_city_state_zip',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => 'Philadelphia, Pa 19147',
+      'placeholder' => '',
+    ),
+  ),
+  'location' => array (
+    array (
+      array (
+        'param' => 'page',
+        'operator' => '==',
+        'value' => '88',
+      ),
+    ),
+  ),
+  'menu_order' => 1,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => array (
+    0 => 'comments',
+    1 => 'author',
+    2 => 'featured_image',
+  ),
   'active' => 1,
   'description' => '',
 ));
