@@ -2509,6 +2509,40 @@ footer.fixed-nav {
 .view-cap, .view-container-border {
   background-color: transparent !important; }
 
+div#site-intro-container {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  text-align: center; }
+  div#site-intro-container svg {
+    width: 50%;
+    padding-top: 5rem;
+    margin-left: auto;
+    margin-right: auto; }
+    div#site-intro-container svg .st0 {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 32;
+      stroke-miterlimit: 10; }
+    div#site-intro-container svg .st1 {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 33.5;
+      stroke-miterlimit: 10; }
+    div#site-intro-container svg .st2 {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-miterlimit: 10; }
+    div#site-intro-container svg .st3 {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 31.5;
+      stroke-miterlimit: 10; }
+
 .list {
   text-align: left;
   height: 100%; }

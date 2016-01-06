@@ -14,6 +14,7 @@ get_header(); ?>
 		/* Start the Loop */
 		while ( have_posts() ) : the_post(); ?>
 			
+			<?php include 'partials/home/intro.php'; ?>
 			<?php include 'partials/home/_mobile-nav.php'; ?>
 			<?php include 'partials/home/main-header.php'; ?>
 			<?php include 'partials/home/section-about.php'; ?>

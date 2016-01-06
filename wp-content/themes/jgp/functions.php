@@ -28,14 +28,18 @@ function jgp_load_javascript_files() {
   wp_register_script( 'studioMap', get_template_directory_uri() . '/assets/js/studio-map.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'sub_menus', get_template_directory_uri() . '/assets/js/_sub-menus.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'global_script', get_template_directory_uri() . '/assets/js/_script.js', array('jquery'), '1.0.0', true );
-  wp_register_script( 'greensock', get_template_directory_uri() . '/assets/js/TweenLite.min.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'greensock', get_template_directory_uri() . '/assets/js/TweenMax.min.js', array('jquery'), '1.0.0', true );
   wp_register_script( 'start_animation', get_template_directory_uri() . '/assets/js/_startAnimation.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'drawSVG', get_template_directory_uri() . '/assets/js/DrawSVGPlugin.min.js', array('jquery'), '1.0.0', true );
+  wp_register_script( 'draw', get_template_directory_uri() . '/assets/js/draw.js', array('jquery'), '1.0.0', true );
 
 
   if ( is_page( 'JGP Home' ) ) {
       wp_enqueue_script('sub_menus');
      wp_enqueue_script('global_script');
      wp_enqueue_script('greensock');
+     wp_enqueue_script('drawSVG');
+     wp_enqueue_script('draw');
      
   }
 

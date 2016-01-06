@@ -22,7 +22,7 @@ get_header(); ?>
 				elseif ( is_page( 'JGPStudio') ):
 					get_template( 'Studio' );
 				else:
-					get_404_template();
+					get_404_template( '404' );
 			?>
 
 		<?php endwhile;
